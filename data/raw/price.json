@@ -1,0 +1,757 @@
+[
+  {
+    "product_id": "PROD-001",
+    "price": 28990000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-002",
+    "price": 26500000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-003",
+    "price": 79990000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-004",
+    "price": 45000000,
+    "discount": 15
+  },
+  {
+    "product_id": "PROD-005",
+    "price": 22990000,
+    "discount": 8
+  },
+  {
+    "product_id": "PROD-006",
+    "price": 52000000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-007",
+    "price": 38500000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-008",
+    "price": 24000000,
+    "discount": 12
+  },
+  {
+    "product_id": "PROD-009",
+    "price": 55000000,
+    "discount": 7
+  },
+  {
+    "product_id": "PROD-010",
+    "price": 32000000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-011",
+    "price": 21500000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-012",
+    "price": 34990000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-013",
+    "price": 41000000,
+    "discount": 20
+  },
+  {
+    "product_id": "PROD-014",
+    "price": 85000000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-015",
+    "price": 36000000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-016",
+    "price": 19500000,
+    "discount": 15
+  },
+  {
+    "product_id": "PROD-017",
+    "price": 33000000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-018",
+    "price": 31000000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-019",
+    "price": 14990000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-020",
+    "price": 28000000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-021",
+    "price": 92000000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-022",
+    "price": 9500000,
+    "discount": 15
+  },
+  {
+    "product_id": "PROD-023",
+    "price": 27500000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-024",
+    "price": 13990000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-025",
+    "price": 31500000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-026",
+    "price": 12500000,
+    "discount": 12
+  },
+  {
+    "product_id": "PROD-027",
+    "price": 36990000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-028",
+    "price": 10990000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-029",
+    "price": 24000000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-030",
+    "price": 14000000,
+    "discount": 20
+  },
+  {
+    "product_id": "PROD-031",
+    "price": 32990000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-032",
+    "price": 22500000,
+    "discount": 8
+  },
+  {
+    "product_id": "PROD-033",
+    "price": 19500000,
+    "discount": 15
+  },
+  {
+    "product_id": "PROD-034",
+    "price": 15990000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-035",
+    "price": 13500000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-036",
+    "price": 19500000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-037",
+    "price": 115000000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-038",
+    "price": 11000000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-039",
+    "price": 34000000,
+    "discount": 12
+  },
+  {
+    "product_id": "PROD-040",
+    "price": 26990000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-041",
+    "price": 42000000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-042",
+    "price": 18500000,
+    "discount": 15
+  },
+  {
+    "product_id": "PROD-043",
+    "price": 31000000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-044",
+    "price": 23000000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-045",
+    "price": 29900000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-046",
+    "price": 11500000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-047",
+    "price": 48000000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-048",
+    "price": 8990000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-049",
+    "price": 38900000,
+    "discount": 15
+  },
+  {
+    "product_id": "PROD-050",
+    "price": 7500000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-051",
+    "price": 109990000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-052",
+    "price": 32000000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-053",
+    "price": 45000000,
+    "discount": 12
+  },
+  {
+    "product_id": "PROD-054",
+    "price": 14500000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-055",
+    "price": 17900000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-056",
+    "price": 23500000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-057",
+    "price": 38000000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-058",
+    "price": 4500000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-059",
+    "price": 12000000,
+    "discount": 15
+  },
+  {
+    "product_id": "PROD-060",
+    "price": 38000000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-061",
+    "price": 21000000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-062",
+    "price": 25000000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-063",
+    "price": 23500000,
+    "discount": 8
+  },
+  {
+    "product_id": "PROD-064",
+    "price": 9900000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-065",
+    "price": 58000000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-066",
+    "price": 42000000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-067",
+    "price": 72000000,
+    "discount": 12
+  },
+  {
+    "product_id": "PROD-068",
+    "price": 9500000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-069",
+    "price": 14500000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-070",
+    "price": 35000000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-071",
+    "price": 39900000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-072",
+    "price": 13500000,
+    "discount": 15
+  },
+  {
+    "product_id": "PROD-073",
+    "price": 19900000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-074",
+    "price": 12000000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-075",
+    "price": 45000000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-076",
+    "price": 19500000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-077",
+    "price": 22000000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-078",
+    "price": 16500000,
+    "discount": 12
+  },
+  {
+    "product_id": "PROD-079",
+    "price": 26000000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-080",
+    "price": 14500000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-081",
+    "price": 9500000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-082",
+    "price": 5500000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-083",
+    "price": 13990000,
+    "discount": 15
+  },
+  {
+    "product_id": "PROD-084",
+    "price": 11000000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-085",
+    "price": 13500000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-086",
+    "price": 16500000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-087",
+    "price": 12500000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-088",
+    "price": 21000000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-089",
+    "price": 10500000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-090",
+    "price": 6990000,
+    "discount": 20
+  },
+  {
+    "product_id": "PROD-091",
+    "price": 4500000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-092",
+    "price": 5200000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-093",
+    "price": 21000000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-094",
+    "price": 11500000,
+    "discount": 15
+  },
+  {
+    "product_id": "PROD-095",
+    "price": 8500000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-096",
+    "price": 15500000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-097",
+    "price": 32000000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-098",
+    "price": 18900000,
+    "discount": 12
+  },
+  {
+    "product_id": "PROD-099",
+    "price": 14000000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-100",
+    "price": 199000000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-101",
+    "price": 5900000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-102",
+    "price": 12500000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-103",
+    "price": 28900000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-104",
+    "price": 17400000,
+    "discount": 15
+  },
+  {
+    "product_id": "PROD-105",
+    "price": 4500000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-106",
+    "price": 31000000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-107",
+    "price": 13900000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-108",
+    "price": 5500000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-109",
+    "price": 22500000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-110",
+    "price": 16000000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-111",
+    "price": 41500000,
+    "discount": 12
+  },
+  {
+    "product_id": "PROD-112",
+    "price": 9990000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-113",
+    "price": 52000000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-114",
+    "price": 26900000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-115",
+    "price": 11000000,
+    "discount": 15
+  },
+  {
+    "product_id": "PROD-116",
+    "price": 7500000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-117",
+    "price": 34000000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-118",
+    "price": 21900000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-119",
+    "price": 68000000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-120",
+    "price": 12990000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-121",
+    "price": 21990000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-122",
+    "price": 15990000,
+    "discount": 15
+  },
+  {
+    "product_id": "PROD-123",
+    "price": 18990000,
+    "discount": 7
+  },
+  {
+    "product_id": "PROD-124",
+    "price": 32500000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-125",
+    "price": 14500000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-126",
+    "price": 8900000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-127",
+    "price": 47000000,
+    "discount": 12
+  },
+  {
+    "product_id": "PROD-128",
+    "price": 23000000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-129",
+    "price": 11500000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-130",
+    "price": 39000000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-131",
+    "price": 26000000,
+    "discount": 15
+  },
+  {
+    "product_id": "PROD-132",
+    "price": 15500000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-133",
+    "price": 54000000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-134",
+    "price": 18000000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-135",
+    "price": 29900000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-136",
+    "price": 13500000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-137",
+    "price": 42000000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-138",
+    "price": 24500000,
+    "discount": 12
+  },
+  {
+    "product_id": "PROD-139",
+    "price": 9500000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-140",
+    "price": 31500000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-141",
+    "price": 19900000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-142",
+    "price": 8200000,
+    "discount": 15
+  },
+  {
+    "product_id": "PROD-143",
+    "price": 51000000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-144",
+    "price": 16500000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-145",
+    "price": 33000000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-146",
+    "price": 20500000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-147",
+    "price": 48500000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-148",
+    "price": 27900000,
+    "discount": 0
+  },
+  {
+    "product_id": "PROD-149",
+    "price": 16990000,
+    "discount": 5
+  },
+  {
+    "product_id": "PROD-150",
+    "price": 12400000,
+    "discount": 10
+  },
+  {
+    "product_id": "PROD-151",
+    "price": 38900000,
+    "discount": 0
+  }
+]

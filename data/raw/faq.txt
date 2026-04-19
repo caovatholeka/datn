@@ -1,0 +1,23 @@
+Nếu khách cần điện thoại chơi game:
+→ Ưu tiên máy có chip mạnh như Snapdragon 8 Gen series hoặc Apple A series
+
+Nếu khách cần điện thoại pin trâu:
+→ Chọn máy có pin từ 5000mAh trở lên
+
+Nếu khách cần điện thoại chụp ảnh đẹp:
+→ Ưu tiên iPhone hoặc các dòng có camera cao cấp
+
+Nếu khách cần laptop học tập:
+→ Chọn laptop i5 hoặc Ryzen 5, RAM 8GB
+
+Nếu khách cần laptop làm đồ họa:
+→ Chọn laptop có GPU rời, RAM từ 16GB
+
+Nếu khách cần laptop mỏng nhẹ:
+→ Ưu tiên ultrabook, trọng lượng dưới 1.5kg
+
+Nếu khách cần sản phẩm giá rẻ:
+→ Ưu tiên các dòng phổ thông hoặc đời cũ
+
+Nếu khách cần sản phẩm cao cấp:
+→ Ưu tiên flagship hoặc laptop hiệu năng cao

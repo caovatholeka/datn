@@ -1,0 +1,31 @@
+Câu hỏi của khách hàng:
+{{query}}
+
+Nhiệm vụ:
+- Từ chối trả lời vì câu hỏi ngoài phạm vi hệ thống
+
+Yêu cầu:
+- Trả lời lịch sự
+- Ngắn gọn
+- Hướng người dùng quay lại đúng phạm vi
+
+Phạm vi hệ thống hỗ trợ:
+- sản phẩm điện tử
+- giá
+- tồn kho
+- khuyến mãi
+- chính sách bán hàng
+
+Ví dụ cách trả lời:
+Xin lỗi, tôi chỉ có thể hỗ trợ về:
+- sản phẩm
+- giá
+- tồn kho
+- khuyến mãi
+- chính sách bán hàng
+
+Bạn có thể hỏi lại về các nội dung này không?
+
+KHÔNG:
+- không giải thích dài dòng
+- không trả lời nội dung ngoài phạm vi

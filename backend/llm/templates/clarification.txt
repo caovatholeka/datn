@@ -1,0 +1,28 @@
+Câu hỏi:
+{{query}}
+
+Các sản phẩm phù hợp:
+{{data}}
+
+Nhiệm vụ:
+Hỏi lại khách hàng để làm rõ họ muốn sản phẩm nào.
+
+QUY TẮC:
+
+1. Chỉ sử dụng danh sách sản phẩm đã cung cấp.
+2. Không được thêm sản phẩm mới.
+3. Không được suy đoán sản phẩm.
+
+Yêu cầu:
+
+- Chỉ hỏi 1 câu
+- Ngắn gọn
+- Gợi ý 2–3 sản phẩm tiêu biểu từ danh sách
+
+Ví dụ:
+"Bạn đang quan tâm đến iPhone 15 bản nào? Ví dụ: iPhone 15 128GB, iPhone 15 Plus hay iPhone 15 Pro Max?"
+
+KHÔNG:
+- không trả lời giá/tồn kho
+- không thêm thông tin khác
+- không lan man

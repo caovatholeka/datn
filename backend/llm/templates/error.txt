@@ -1,0 +1,20 @@
+Câu hỏi của khách hàng:
+{{query}}
+
+Hệ thống hiện không thể xử lý yêu cầu này.
+
+Nhiệm vụ:
+- Xin lỗi người dùng
+- Thông báo ngắn gọn
+- Gợi ý thử lại
+
+Yêu cầu:
+- Ngắn gọn
+- Lịch sự
+
+Ví dụ:
+- "Xin lỗi, hiện tại hệ thống chưa thể xử lý yêu cầu này. Bạn vui lòng thử lại sau hoặc diễn đạt lại câu hỏi nhé."
+
+KHÔNG:
+- không đổ lỗi kỹ thuật
+- không giải thích hệ thống

@@ -1,0 +1,757 @@
+[
+    {
+        "product_id": "PROD-001",
+        "warehouse": "Hà Nội",
+        "stock": 45
+    },
+    {
+        "product_id": "PROD-002",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 12
+    },
+    {
+        "product_id": "PROD-003",
+        "warehouse": "Hà Nội",
+        "stock": 0
+    },
+    {
+        "product_id": "PROD-004",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 88
+    },
+    {
+        "product_id": "PROD-005",
+        "warehouse": "Hà Nội",
+        "stock": 34
+    },
+    {
+        "product_id": "PROD-006",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 21
+    },
+    {
+        "product_id": "PROD-007",
+        "warehouse": "Hà Nội",
+        "stock": 15
+    },
+    {
+        "product_id": "PROD-008",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 67
+    },
+    {
+        "product_id": "PROD-009",
+        "warehouse": "Hà Nội",
+        "stock": 9
+    },
+    {
+        "product_id": "PROD-10",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 53
+    },
+    {
+        "product_id": "PROD-011",
+        "warehouse": "Hà Nội",
+        "stock": 25
+    },
+    {
+        "product_id": "PROD-012",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 40
+    },
+    {
+        "product_id": "PROD-013",
+        "warehouse": "Hà Nội",
+        "stock": 18
+    },
+    {
+        "product_id": "PROD-014",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 32
+    },
+    {
+        "product_id": "PROD-015",
+        "warehouse": "Hà Nội",
+        "stock": 7
+    },
+    {
+        "product_id": "PROD-016",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 55
+    },
+    {
+        "product_id": "PROD-017",
+        "warehouse": "Hà Nội",
+        "stock": 90
+    },
+    {
+        "product_id": "PROD-018",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 14
+    },
+    {
+        "product_id": "PROD-019",
+        "warehouse": "Hà Nội",
+        "stock": 28
+    },
+    {
+        "product_id": "PROD-020",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 61
+    },
+    {
+        "product_id": "PROD-021",
+        "warehouse": "Hà Nội",
+        "stock": 39
+    },
+    {
+        "product_id": "PROD-022",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 10
+    },
+    {
+        "product_id": "PROD-023",
+        "warehouse": "Hà Nội",
+        "stock": 72
+    },
+    {
+        "product_id": "PROD-024",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 5
+    },
+    {
+        "product_id": "PROD-025",
+        "warehouse": "Hà Nội",
+        "stock": 83
+    },
+    {
+        "product_id": "PROD-026",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 47
+    },
+    {
+        "product_id": "PROD-027",
+        "warehouse": "Hà Nội",
+        "stock": 22
+    },
+    {
+        "product_id": "PROD-028",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 95
+    },
+    {
+        "product_id": "PROD-029",
+        "warehouse": "Hà Nội",
+        "stock": 13
+    },
+    {
+        "product_id": "PROD-030",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 0
+    },
+    {
+        "product_id": "PROD-031",
+        "warehouse": "Hà Nội",
+        "stock": 56
+    },
+    {
+        "product_id": "PROD-032",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 78
+    },
+    {
+        "product_id": "PROD-033",
+        "warehouse": "Hà Nội",
+        "stock": 31
+    },
+    {
+        "product_id": "PROD-034",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 42
+    },
+    {
+        "product_id": "PROD-035",
+        "warehouse": "Hà Nội",
+        "stock": 64
+    },
+    {
+        "product_id": "PROD-036",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 19
+    },
+    {
+        "product_id": "PROD-037",
+        "warehouse": "Hà Nội",
+        "stock": 8
+    },
+    {
+        "product_id": "PROD-038",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 50
+    },
+    {
+        "product_id": "PROD-039",
+        "warehouse": "Hà Nội",
+        "stock": 73
+    },
+    {
+        "product_id": "PROD-040",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 27
+    },
+    {
+        "product_id": "PROD-041",
+        "warehouse": "Hà Nội",
+        "stock": 11
+    },
+    {
+        "product_id": "PROD-042",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 92
+    },
+    {
+        "product_id": "PROD-043",
+        "warehouse": "Hà Nội",
+        "stock": 35
+    },
+    {
+        "product_id": "PROD-044",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 58
+    },
+    {
+        "product_id": "PROD-045",
+        "warehouse": "Hà Nội",
+        "stock": 20
+    },
+    {
+        "product_id": "PROD-046",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 44
+    },
+    {
+        "product_id": "PROD-047",
+        "warehouse": "Hà Nội",
+        "stock": 69
+    },
+    {
+        "product_id": "PROD-048",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 3
+    },
+    {
+        "product_id": "PROD-049",
+        "warehouse": "Hà Nội",
+        "stock": 81
+    },
+    {
+        "product_id": "PROD-050",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 17
+    },
+    {
+        "product_id": "PROD-051",
+        "warehouse": "Hà Nội",
+        "stock": 49
+    },
+    {
+        "product_id": "PROD-052",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 33
+    },
+    {
+        "product_id": "PROD-053",
+        "warehouse": "Hà Nội",
+        "stock": 75
+    },
+    {
+        "product_id": "PROD-054",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 100
+    },
+    {
+        "product_id": "PROD-055",
+        "warehouse": "Hà Nội",
+        "stock": 26
+    },
+    {
+        "product_id": "PROD-056",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 6
+    },
+    {
+        "product_id": "PROD-057",
+        "warehouse": "Hà Nội",
+        "stock": 52
+    },
+    {
+        "product_id": "PROD-058",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 85
+    },
+    {
+        "product_id": "PROD-059",
+        "warehouse": "Hà Nội",
+        "stock": 14
+    },
+    {
+        "product_id": "PROD-060",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 38
+    },
+    {
+        "product_id": "PROD-061",
+        "warehouse": "Hà Nội",
+        "stock": 70
+    },
+    {
+        "product_id": "PROD-062",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 23
+    },
+    {
+        "product_id": "PROD-063",
+        "warehouse": "Hà Nội",
+        "stock": 41
+    },
+    {
+        "product_id": "PROD-064",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 99
+    },
+    {
+        "product_id": "PROD-065",
+        "warehouse": "Hà Nội",
+        "stock": 4
+    },
+    {
+        "product_id": "PROD-066",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 59
+    },
+    {
+        "product_id": "PROD-067",
+        "warehouse": "Hà Nội",
+        "stock": 77
+    },
+    {
+        "product_id": "PROD-068",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 16
+    },
+    {
+        "product_id": "PROD-069",
+        "warehouse": "Hà Nội",
+        "stock": 43
+    },
+    {
+        "product_id": "PROD-070",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 87
+    },
+    {
+        "product_id": "PROD-071",
+        "warehouse": "Hà Nội",
+        "stock": 29
+    },
+    {
+        "product_id": "PROD-072",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 51
+    },
+    {
+        "product_id": "PROD-073",
+        "warehouse": "Hà Nội",
+        "stock": 65
+    },
+    {
+        "product_id": "PROD-074",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 1
+    },
+    {
+        "product_id": "PROD-075",
+        "warehouse": "Hà Nội",
+        "stock": 94
+    },
+    {
+        "product_id": "PROD-076",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 37
+    },
+    {
+        "product_id": "PROD-077",
+        "warehouse": "Hà Nội",
+        "stock": 60
+    },
+    {
+        "product_id": "PROD-078",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 24
+    },
+    {
+        "product_id": "PROD-079",
+        "warehouse": "Hà Nội",
+        "stock": 82
+    },
+    {
+        "product_id": "PROD-080",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 46
+    },
+    {
+        "product_id": "PROD-081",
+        "warehouse": "Hà Nội",
+        "stock": 10
+    },
+    {
+        "product_id": "PROD-082",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 71
+    },
+    {
+        "product_id": "PROD-083",
+        "warehouse": "Hà Nội",
+        "stock": 54
+    },
+    {
+        "product_id": "PROD-084",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 2
+    },
+    {
+        "product_id": "PROD-085",
+        "warehouse": "Hà Nội",
+        "stock": 36
+    },
+    {
+        "product_id": "PROD-086",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 89
+    },
+    {
+        "product_id": "PROD-087",
+        "warehouse": "Hà Nội",
+        "stock": 63
+    },
+    {
+        "product_id": "PROD-088",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 15
+    },
+    {
+        "product_id": "PROD-089",
+        "warehouse": "Hà Nội",
+        "stock": 48
+    },
+    {
+        "product_id": "PROD-090",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 0
+    },
+    {
+        "product_id": "PROD-091",
+        "warehouse": "Hà Nội",
+        "stock": 96
+    },
+    {
+        "product_id": "PROD-092",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 30
+    },
+    {
+        "product_id": "PROD-093",
+        "warehouse": "Hà Nội",
+        "stock": 66
+    },
+    {
+        "product_id": "PROD-094",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 57
+    },
+    {
+        "product_id": "PROD-095",
+        "warehouse": "Hà Nội",
+        "stock": 21
+    },
+    {
+        "product_id": "PROD-096",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 74
+    },
+    {
+        "product_id": "PROD-097",
+        "warehouse": "Hà Nội",
+        "stock": 80
+    },
+    {
+        "product_id": "PROD-098",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 12
+    },
+    {
+        "product_id": "PROD-099",
+        "warehouse": "Hà Nội",
+        "stock": 45
+    },
+    {
+        "product_id": "PROD-100",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 91
+    },
+    {
+        "product_id": "PROD-101",
+        "warehouse": "Hà Nội",
+        "stock": 5
+    },
+    {
+        "product_id": "PROD-102",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 68
+    },
+    {
+        "product_id": "PROD-103",
+        "warehouse": "Hà Nội",
+        "stock": 33
+    },
+    {
+        "product_id": "PROD-104",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 19
+    },
+    {
+        "product_id": "PROD-105",
+        "warehouse": "Hà Nội",
+        "stock": 84
+    },
+    {
+        "product_id": "PROD-106",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 52
+    },
+    {
+        "product_id": "PROD-107",
+        "warehouse": "Hà Nội",
+        "stock": 27
+    },
+    {
+        "product_id": "PROD-108",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 9
+    },
+    {
+        "product_id": "PROD-109",
+        "warehouse": "Hà Nội",
+        "stock": 62
+    },
+    {
+        "product_id": "PROD-110",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 38
+    },
+    {
+        "product_id": "PROD-111",
+        "warehouse": "Hà Nội",
+        "stock": 76
+    },
+    {
+        "product_id": "PROD-112",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 14
+    },
+    {
+        "product_id": "PROD-113",
+        "warehouse": "Hà Nội",
+        "stock": 93
+    },
+    {
+        "product_id": "PROD-114",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 50
+    },
+    {
+        "product_id": "PROD-115",
+        "warehouse": "Hà Nội",
+        "stock": 23
+    },
+    {
+        "product_id": "PROD-116",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 8
+    },
+    {
+        "product_id": "PROD-117",
+        "warehouse": "Hà Nội",
+        "stock": 70
+    },
+    {
+        "product_id": "PROD-118",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 41
+    },
+    {
+        "product_id": "PROD-119",
+        "warehouse": "Hà Nội",
+        "stock": 97
+    },
+    {
+        "product_id": "PROD-120",
+        "warehouse": "Hà Nội",
+        "stock": 15
+    },
+    {
+        "product_id": "PROD-121",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 20
+    },
+    {
+        "product_id": "PROD-122",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 10
+    },
+    {
+        "product_id": "PROD-123",
+        "warehouse": "Hà Nội",
+        "stock": 25
+    },
+    {
+        "product_id": "PROD-124",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 55
+    },
+    {
+        "product_id": "PROD-125",
+        "warehouse": "Hà Nội",
+        "stock": 31
+    },
+    {
+        "product_id": "PROD-126",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 7
+    },
+    {
+        "product_id": "PROD-127",
+        "warehouse": "Hà Nội",
+        "stock": 86
+    },
+    {
+        "product_id": "PROD-128",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 44
+    },
+    {
+        "product_id": "PROD-129",
+        "warehouse": "Hà Nội",
+        "stock": 12
+    },
+    {
+        "product_id": "PROD-130",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 69
+    },
+    {
+        "product_id": "PROD-131",
+        "warehouse": "Hà Nội",
+        "stock": 35
+    },
+    {
+        "product_id": "PROD-132",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 0
+    },
+    {
+        "product_id": "PROD-133",
+        "warehouse": "Hà Nội",
+        "stock": 90
+    },
+    {
+        "product_id": "PROD-134",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 18
+    },
+    {
+        "product_id": "PROD-135",
+        "warehouse": "Hà Nội",
+        "stock": 53
+    },
+    {
+        "product_id": "PROD-136",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 26
+    },
+    {
+        "product_id": "PROD-137",
+        "warehouse": "Hà Nội",
+        "stock": 81
+    },
+    {
+        "product_id": "PROD-138",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 49
+    },
+    {
+        "product_id": "PROD-139",
+        "warehouse": "Hà Nội",
+        "stock": 11
+    },
+    {
+        "product_id": "PROD-140",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 77
+    },
+    {
+        "product_id": "PROD-141",
+        "warehouse": "Hà Nội",
+        "stock": 40
+    },
+    {
+        "product_id": "PROD-142",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 3
+    },
+    {
+        "product_id": "PROD-143",
+        "warehouse": "Hà Nội",
+        "stock": 95
+    },
+    {
+        "product_id": "PROD-144",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 22
+    },
+    {
+        "product_id": "PROD-145",
+        "warehouse": "Hà Nội",
+        "stock": 58
+    },
+    {
+        "product_id": "PROD-146",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 34
+    },
+    {
+        "product_id": "PROD-147",
+        "warehouse": "Hà Nội",
+        "stock": 88
+    },
+    {
+        "product_id": "PROD-148",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 56
+    },
+    {
+        "product_id": "PROD-149",
+        "warehouse": "Hà Nội",
+        "stock": 30
+    },
+    {
+        "product_id": "PROD-150",
+        "warehouse": "Hồ Chí Minh",
+        "stock": 13
+    },
+    {
+        "product_id": "PROD-151",
+        "warehouse": "Hà Nội",
+        "stock": 72
+    }
+]

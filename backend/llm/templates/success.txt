@@ -1,0 +1,16 @@
+Câu hỏi của khách hàng: {{query}}
+
+Dữ liệu đã được tra cứu từ hệ thống (CHỈ ĐƯỢC SỬ DỤNG THÔNG TIN NÀY):
+----
+{{data}}
+----
+
+⚠️ Nhắc lại LUẬT QUAN TRỌNG NHẤT trước khi trả lời:
+- Nếu dữ liệu trống hoặc thiếu thông tin → PHẢI nói "Tôi hiện không có thông tin về [chủ đề] trong hệ thống", không được bịa.
+- Không được tự thêm sản phẩm, tính năng, giá, số lượng, chính sách nào NGOÀI dữ liệu trên.
+
+Hãy tạo câu trả lời tự nhiên, chính xác, dễ hiểu cho khách hàng dựa trên DỮ LIỆU TRÊN.
+- Nếu có giá và giảm giá → nêu rõ giá gốc, phần trăm giảm và giá sau giảm.
+- Nếu có tồn kho → nêu rõ số lượng và trạng thái (còn hàng / hết hàng).
+- Nếu có thông tin chính sách → trích dẫn ĐÚNG nguyên văn, không diễn đạt lại sai ý.
+- Kết thúc bằng câu hỏi thăm dò thêm nhu cầu.

@@ -1,0 +1,2025 @@
+[
+    {
+        "id": "PROD-001",
+        "name": "iPhone 15 Pro Max 256GB",
+        "category": "Smartphone",
+        "brand": "Apple",
+        "specs": "Chip A17 Pro, Camera 48MP, Màn hình 6.7 inch ProMotion",
+        "warranty": "12 tháng",
+        "batery": "5000mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-01-10",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-002",
+        "name": "Samsung Galaxy S24 Ultra",
+        "category": "Smartphone",
+        "brand": "Samsung",
+        "specs": "Snapdragon 8 Gen 3, Bút S-Pen, Zoom 100x",
+        "warranty": "12 tháng",
+        "batery": "5500mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-02-15",
+            "status": "out_of_stock"
+        }
+    },
+    {
+        "id": "PROD-003",
+        "name": "MacBook Pro M3 Max 14 inch",
+        "category": "Laptop",
+        "brand": "Apple",
+        "specs": "M3 Max, 36GB RAM, 1TB SSD",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-01",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-004",
+        "name": "Dell XPS 13 Plus 2025",
+        "category": "Laptop",
+        "brand": "Dell",
+        "specs": "Core Ultra 7, 16GB RAM, 512GB SSD OLED",
+        "warranty": "24 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-02-20",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-005",
+        "name": "Xiaomi 14 Ultra",
+        "category": "Smartphone",
+        "brand": "Xiaomi",
+        "specs": "Leica Camera, Snapdragon 8 Gen 3",
+        "warranty": "18 tháng",
+        "batery": "5000mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-01-25",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-006",
+        "name": "ASUS ROG Zephyrus G14",
+        "category": "Laptop",
+        "brand": "ASUS",
+        "specs": "Ryzen 9, RTX 4070, 32GB RAM",
+        "warranty": "24 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-10",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-007",
+        "name": "HP Spectre x360 2-in-1",
+        "category": "Laptop",
+        "brand": "HP",
+        "specs": "Intel Core Ultra 5, Màn hình cảm ứng",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-02-12",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-008",
+        "name": "Google Pixel 9 Pro",
+        "category": "Smartphone",
+        "brand": "Google",
+        "specs": "Chip Tensor G4, Camera AI",
+        "warranty": "12 tháng",
+        "batery": "4800mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-05",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-009",
+        "name": "Lenovo ThinkPad X1 Carbon Gen 12",
+        "category": "Laptop",
+        "brand": "Lenovo",
+        "specs": "Sợi Carbon siêu nhẹ, Core Ultra 7",
+        "warranty": "36 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-01-30",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-010",
+        "name": "Sony Xperia 1 VI",
+        "category": "Smartphone",
+        "brand": "Sony",
+        "specs": "Màn hình 4K OLED, Chuyên nghiệp Cinema",
+        "warranty": "12 tháng",
+        "batery": "5000mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-02-28",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-011",
+        "name": "Oppo Find X7 Ultra",
+        "category": "Smartphone",
+        "brand": "Oppo",
+        "specs": "Camera Hasselblad, Sạc nhanh 100W",
+        "warranty": "12 tháng",
+        "batery": "5000mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-02",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-012",
+        "name": "iPad Pro M4 13 inch",
+        "category": "Tablet",
+        "brand": "Apple",
+        "specs": "Chip M4, Màn hình Tandem OLED",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-15",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-013",
+        "name": "Samsung Galaxy Z Fold6",
+        "category": "Smartphone",
+        "brand": "Samsung",
+        "specs": "Màn hình gập, Snapdragon 8 Gen 3",
+        "warranty": "12 tháng",
+        "batery": "4400mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-20",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-014",
+        "name": "MSI Raider GE78 HX",
+        "category": "Laptop",
+        "brand": "MSI",
+        "specs": "i9-14900HX, RTX 4090, 64GB RAM",
+        "warranty": "24 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-01-15",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-015",
+        "name": "Surface Pro 10",
+        "category": "Laptop",
+        "brand": "Microsoft",
+        "specs": "Chip Intel Core Ultra, Windows 11 AI",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-02-10",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-016",
+        "name": "Vivo X100 Pro",
+        "category": "Smartphone",
+        "brand": "Vivo",
+        "specs": "Chip Dimensity 9300, Ống kính Zeiss",
+        "warranty": "12 tháng",
+        "batery": "5400mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-08",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-017",
+        "name": "Acer Predator Helios Neo 16",
+        "category": "Laptop",
+        "brand": "Acer",
+        "specs": "i7-13700HX, RTX 4060",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-02-05",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-018",
+        "name": "iPhone 16 Pro",
+        "category": "Smartphone",
+        "brand": "Apple",
+        "specs": "Chip A18 Pro, Camera Control Button",
+        "warranty": "12 tháng",
+        "batery": "4500mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-25",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-019",
+        "name": "Mac Mini M4",
+        "category": "Desktop",
+        "brand": "Apple",
+        "specs": "M4, 16GB RAM, 256GB SSD",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-01",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-020",
+        "name": "Samsung Galaxy Tab S10 Ultra",
+        "category": "Tablet",
+        "brand": "Samsung",
+        "specs": "Màn hình 14.6 inch, S-Pen",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-30",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-021",
+        "name": "Dell Alienware m18 R2",
+        "category": "Laptop",
+        "brand": "Dell",
+        "specs": "i9-14900HX, RTX 4090, 18 inch",
+        "warranty": "24 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-02-15",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-022",
+        "name": "Xiaomi Redmi Note 14 Pro+",
+        "category": "Smartphone",
+        "brand": "Xiaomi",
+        "specs": "Camera 200MP, Sạc 120W",
+        "warranty": "18 tháng",
+        "batery": "5000mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-01-20",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-023",
+        "name": "ASUS Zenbook 14 OLED",
+        "category": "Laptop",
+        "brand": "ASUS",
+        "specs": "Core Ultra 5, 16GB, OLED 3K",
+        "warranty": "24 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-05",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-024",
+        "name": "Oppo Reno12 Pro",
+        "category": "Smartphone",
+        "brand": "Oppo",
+        "specs": "Thiết kế thời trang, Selfie 50MP",
+        "warranty": "12 tháng",
+        "batery": "5000mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-02-25",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-025",
+        "name": "Lenovo Legion Slim 5",
+        "category": "Laptop",
+        "brand": "Lenovo",
+        "specs": "Ryzen 7, RTX 4060, 165Hz",
+        "warranty": "24 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-12",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-026",
+        "name": "Realme GT 6",
+        "category": "Smartphone",
+        "brand": "Realme",
+        "specs": "Snapdragon 8s Gen 3, Sạc 120W",
+        "warranty": "12 tháng",
+        "batery": "5500mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-05",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-027",
+        "name": "Apple iMac 24 inch M3",
+        "category": "Desktop",
+        "brand": "Apple",
+        "specs": "8-core CPU, 10-core GPU, 256GB",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-01-12",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-028",
+        "name": "Samsung Galaxy A55",
+        "category": "Smartphone",
+        "brand": "Samsung",
+        "specs": "Exynos 1480, Kháng nước IP67",
+        "warranty": "12 tháng",
+        "batery": "5000mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-02-18",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-029",
+        "name": "HP Victus 16 2024",
+        "category": "Laptop",
+        "brand": "HP",
+        "specs": "i5-13500H, RTX 4050",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-22",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-030",
+        "name": "Motorola Edge 50 Pro",
+        "category": "Smartphone",
+        "brand": "Motorola",
+        "specs": "Màn hình 144Hz, Sạc không dây 50W",
+        "warranty": "12 tháng",
+        "batery": "4500mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-10",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-031",
+        "name": "MacBook Air M3 15 inch",
+        "category": "Laptop",
+        "brand": "Apple",
+        "specs": "Chip M3, 8GB RAM, 256GB SSD",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-01",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-032",
+        "name": "Samsung Galaxy S24 Plus",
+        "category": "Smartphone",
+        "brand": "Samsung",
+        "specs": "Exynos 2400, RAM 12GB, 256GB",
+        "warranty": "12 tháng",
+        "batery": "4900mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-02-15",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-033",
+        "name": "ASUS Vivobook S 15 OLED",
+        "category": "Laptop",
+        "brand": "ASUS",
+        "specs": "Core Ultra 5, 16GB, OLED 120Hz",
+        "warranty": "24 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-10",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-034",
+        "name": "Xiaomi 14T Pro",
+        "category": "Smartphone",
+        "brand": "Xiaomi",
+        "specs": "Dimensity 9300+, Camera Leica",
+        "warranty": "18 tháng",
+        "batery": "5000mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-01",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-035",
+        "name": "Dell Vostro 3520",
+        "category": "Laptop",
+        "brand": "Dell",
+        "specs": "i5-1235U, 8GB, 512GB SSD",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-01-20",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-036",
+        "name": "iPhone 15 128GB",
+        "category": "Smartphone",
+        "brand": "Apple",
+        "specs": "Chip A16 Bionic, USB-C",
+        "warranty": "12 tháng",
+        "batery": "3349mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-05",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-037",
+        "name": "Razer Blade 16 2026",
+        "category": "Laptop",
+        "brand": "Razer",
+        "specs": "i9-14900HX, RTX 4090, Mini-LED",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-10",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-038",
+        "name": "Google Pixel 8a",
+        "category": "Smartphone",
+        "brand": "Google",
+        "specs": "Tensor G3, Màn hình 120Hz",
+        "warranty": "12 tháng",
+        "batery": "4500mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-22",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-039",
+        "name": "Lenovo Yoga Slim 7i Aura",
+        "category": "Laptop",
+        "brand": "Lenovo",
+        "specs": "Core Ultra 7 (Series 2), AI PC",
+        "warranty": "36 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-02",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-040",
+        "name": "Samsung Galaxy Z Flip6",
+        "category": "Smartphone",
+        "brand": "Samsung",
+        "specs": "Màn hình gập, Snapdragon 8 Gen 3",
+        "warranty": "12 tháng",
+        "batery": "4000mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-02-28",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-041",
+        "name": "Gigabyte Aero 14 OLED",
+        "category": "Laptop",
+        "brand": "Gigabyte",
+        "specs": "i7-13700H, RTX 4050, 2.8K OLED",
+        "warranty": "24 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-15",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-042",
+        "name": "Sony Xperia 5 V",
+        "category": "Smartphone",
+        "brand": "Sony",
+        "specs": "Compact flagship, Snapdragon 8 Gen 2",
+        "warranty": "12 tháng",
+        "batery": "5000mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-01-10",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-043",
+        "name": "HP EliteBook 840 G10",
+        "category": "Laptop",
+        "brand": "HP",
+        "specs": "i5-1335U, 16GB, Bảo mật vân tay",
+        "warranty": "36 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-02-20",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-044",
+        "name": "Honor Magic6 Pro",
+        "category": "Smartphone",
+        "brand": "Honor",
+        "specs": "Camera Falcon, Snapdragon 8 Gen 3",
+        "warranty": "12 tháng",
+        "batery": "5600mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-18",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-045",
+        "name": "Microsoft Surface Laptop 6",
+        "category": "Laptop",
+        "brand": "Microsoft",
+        "specs": "Intel Core Ultra 5, Màn hình cảm ứng 13.5",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-05",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-046",
+        "name": "Realme 13 Pro+",
+        "category": "Smartphone",
+        "brand": "Realme",
+        "specs": "Camera Periscope, Snapdragon 7s Gen 2",
+        "warranty": "12 tháng",
+        "batery": "5200mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-30",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-047",
+        "name": "MSI Stealth 14 Studio",
+        "category": "Laptop",
+        "brand": "MSI",
+        "specs": "i7-13700H, RTX 4060, Vỏ hợp kim Magie",
+        "warranty": "24 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-02-12",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-048",
+        "name": "Nothing Phone (2a)",
+        "category": "Smartphone",
+        "brand": "Nothing",
+        "specs": "Giao diện Glyph, Dimensity 7200 Pro",
+        "warranty": "12 tháng",
+        "batery": "5000mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-01-25",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-049",
+        "name": "ASUS ROG Strix G16",
+        "category": "Laptop",
+        "brand": "ASUS",
+        "specs": "i7-13650HX, RTX 4060, 165Hz",
+        "warranty": "24 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-20",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-050",
+        "name": "Oppo A3 Pro",
+        "category": "Smartphone",
+        "brand": "Oppo",
+        "specs": "Chống nước IP69, Siêu bền",
+        "warranty": "12 tháng",
+        "batery": "5000mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-08",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-051",
+        "name": "Mac Studio M2 Ultra",
+        "category": "Desktop",
+        "brand": "Apple",
+        "specs": "24-core CPU, 60-core GPU, 64GB RAM",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-02-01",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-052",
+        "name": "Huawei Pura 70 Ultra",
+        "category": "Smartphone",
+        "brand": "Huawei",
+        "specs": "Camera thò thụt, Kirin 9010",
+        "warranty": "12 tháng",
+        "batery": "5200mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-12",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-053",
+        "name": "Dell Precision 3581",
+        "category": "Laptop",
+        "brand": "Dell",
+        "specs": "i7-13800H, RTX A500, Workstation",
+        "warranty": "36 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-01-15",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-054",
+        "name": "Vivo V30 Pro",
+        "category": "Smartphone",
+        "brand": "Vivo",
+        "specs": "Ống kính Zeiss, Dimensity 8200",
+        "warranty": "12 tháng",
+        "batery": "5000mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-02-25",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-055",
+        "name": "Acer Swift Go 14",
+        "category": "Laptop",
+        "brand": "Acer",
+        "specs": "Ryzen 7 7840U, 16GB, QHD",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-08",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-056",
+        "name": "iPhone 15 Plus",
+        "category": "Smartphone",
+        "brand": "Apple",
+        "specs": "Màn hình 6.7 inch, Pin siêu trâu",
+        "warranty": "12 tháng",
+        "batery": "4383mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-01-30",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-057",
+        "name": "LG Gram 16 2024",
+        "category": "Laptop",
+        "brand": "LG",
+        "specs": "Siêu nhẹ 1.1kg, Core Ultra 7",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-03",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-058",
+        "name": "Samsung Galaxy A15",
+        "category": "Smartphone",
+        "brand": "Samsung",
+        "specs": "Helio G99, Màn hình Super AMOLED",
+        "warranty": "12 tháng",
+        "batery": "5000mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-25",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-059",
+        "name": "Lenovo IdeaPad Slim 3",
+        "category": "Laptop",
+        "brand": "Lenovo",
+        "specs": "i3-1215U, 8GB RAM, 512GB",
+        "warranty": "24 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-02-14",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-060",
+        "name": "Xiaomi MIX Fold 4",
+        "category": "Smartphone",
+        "brand": "Xiaomi",
+        "specs": "Màn hình gập siêu mỏng, Leica",
+        "warranty": "18 tháng",
+        "batery": "5100mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-28",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-061",
+        "name": "HP ProBook 450 G10",
+        "category": "Laptop",
+        "brand": "HP",
+        "specs": "i7-1355U, 16GB, Bàn phím số",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-01-22",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-062",
+        "name": "Motorola Razr 50 Ultra",
+        "category": "Smartphone",
+        "brand": "Motorola",
+        "specs": "Màn hình ngoài lớn nhất, Snapdragon 8s Gen 3",
+        "warranty": "12 tháng",
+        "batery": "4000mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-09",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-063",
+        "name": "ASUS TUF Gaming F15",
+        "category": "Laptop",
+        "brand": "ASUS",
+        "specs": "i5-12500H, RTX 3050, 144Hz",
+        "warranty": "24 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-02-10",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-064",
+        "name": "Realme GT Neo 6",
+        "category": "Smartphone",
+        "brand": "Realme",
+        "specs": "Snapdragon 7+ Gen 3, Sạc 120W",
+        "warranty": "12 tháng",
+        "batery": "5500mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-15",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-065",
+        "name": "Dell XPS 14 2024",
+        "category": "Laptop",
+        "brand": "Dell",
+        "specs": "Core Ultra 7, RTX 4050, 3.2K OLED",
+        "warranty": "24 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-11",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-066",
+        "name": "Oppo Find N3",
+        "category": "Smartphone",
+        "brand": "Oppo",
+        "specs": "Camera Hasselblad, Màn hình gập tốt nhất",
+        "warranty": "12 tháng",
+        "batery": "4805mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-01-05",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-067",
+        "name": "Lenovo Legion Pro 7i",
+        "category": "Laptop",
+        "brand": "Lenovo",
+        "specs": "i9-14900HX, RTX 4080, 32GB RAM",
+        "warranty": "24 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-20",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-068",
+        "name": "Samsung Galaxy M55",
+        "category": "Smartphone",
+        "brand": "Samsung",
+        "specs": "Snapdragon 7 Gen 1, Sạc 45W",
+        "warranty": "12 tháng",
+        "batery": "5000mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-02-18",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-069",
+        "name": "Acer Aspire 5 2024",
+        "category": "Laptop",
+        "brand": "Acer",
+        "specs": "i5-1335U, 16GB RAM, FHD",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-01",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-070",
+        "name": "Vivo X Fold3 Pro",
+        "category": "Smartphone",
+        "brand": "Vivo",
+        "specs": "Siêu nhẹ 236g, Snapdragon 8 Gen 3",
+        "warranty": "12 tháng",
+        "batery": "5700mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-05",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-071",
+        "name": "MacBook Pro M3 14 inch",
+        "category": "Laptop",
+        "brand": "Apple",
+        "specs": "M3, 16GB RAM, 512GB SSD",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-10",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-072",
+        "name": "iPhone 13 128GB",
+        "category": "Smartphone",
+        "brand": "Apple",
+        "specs": "Huyền thoại Pin trâu, Giá rẻ",
+        "warranty": "12 tháng",
+        "batery": "3227mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-01-15",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-073",
+        "name": "MSI Cyborg 15",
+        "category": "Laptop",
+        "brand": "MSI",
+        "specs": "i5-12450H, RTX 4050, Vỏ trong suốt",
+        "warranty": "24 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-02-22",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-074",
+        "name": "Samsung Galaxy S23 FE",
+        "category": "Smartphone",
+        "brand": "Samsung",
+        "specs": "Exynos 2200, Camera 50MP",
+        "warranty": "12 tháng",
+        "batery": "4500mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-05",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-075",
+        "name": "ASUS ExpertBook B9",
+        "category": "Laptop",
+        "brand": "ASUS",
+        "specs": "Doanh nhân siêu nhẹ, 990g",
+        "warranty": "36 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-01",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-076",
+        "name": "Xiaomi 14 Pro",
+        "category": "Smartphone",
+        "brand": "Xiaomi",
+        "specs": "Snapdragon 8 Gen 3, Màn hình cong 4 cạnh",
+        "warranty": "18 tháng",
+        "batery": "4880mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-02-12",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-077",
+        "name": "Dell Inspiron 16 5630",
+        "category": "Laptop",
+        "brand": "Dell",
+        "specs": "i7-1360P, 16GB, 16 inch FHD+",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-18",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-078",
+        "name": "Honor 200 Pro",
+        "category": "Smartphone",
+        "brand": "Honor",
+        "specs": "Chuyên gia chân dung Harcourt, Snapdragon 8s Gen 3",
+        "warranty": "12 tháng",
+        "batery": "5200mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-10",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-079",
+        "name": "HP Envy x360 2024",
+        "category": "Laptop",
+        "brand": "HP",
+        "specs": "Ryzen 7 8840HS, Cảm ứng xoay gập",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-25",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-080",
+        "name": "Nothing Phone (2)",
+        "category": "Smartphone",
+        "brand": "Nothing",
+        "specs": "Snapdragon 8+ Gen 1, Glyph Interface",
+        "warranty": "12 tháng",
+        "batery": "4700mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-01-20",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-081",
+        "name": "Lenovo Tab P12",
+        "category": "Tablet",
+        "brand": "Lenovo",
+        "specs": "Màn hình 12.7 inch 3K, Kèm bút",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-02-28",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-082",
+        "name": "Samsung Galaxy Tab A9+",
+        "category": "Tablet",
+        "brand": "Samsung",
+        "specs": "Snapdragon 695, Màn hình 90Hz",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-12",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-083",
+        "name": "iPad Mini 7",
+        "category": "Tablet",
+        "brand": "Apple",
+        "specs": "Chip A17 Pro, Apple Intelligence",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-02",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-084",
+        "name": "Oppo Pad 2",
+        "category": "Tablet",
+        "brand": "Oppo",
+        "specs": "Dimensity 9000, Tỷ lệ màn hình 7:5",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-01-30",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-085",
+        "name": "Xiaomi Pad 6S Pro",
+        "category": "Tablet",
+        "brand": "Xiaomi",
+        "specs": "Màn hình 144Hz, Snapdragon 8 Gen 2",
+        "warranty": "18 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-20",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-086",
+        "name": "Surface Go 4",
+        "category": "Tablet",
+        "brand": "Microsoft",
+        "specs": "Intel N200, Chuyên dụng văn phòng",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-02-15",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-087",
+        "name": "Google Pixel Tablet",
+        "category": "Tablet",
+        "brand": "Google",
+        "specs": "Kèm đế loa sạc, Chip Tensor G2",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-05",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-088",
+        "name": "Huawei MatePad Pro 13.2",
+        "category": "Tablet",
+        "brand": "Huawei",
+        "specs": "Màn hình OLED dẻo, Siêu mỏng",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-28",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-089",
+        "name": "Sony Xperia 10 VI",
+        "category": "Smartphone",
+        "brand": "Sony",
+        "specs": "Snapdragon 6 Gen 1, Pin siêu khỏe",
+        "warranty": "12 tháng",
+        "batery": "5000mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-02-10",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-090",
+        "name": "Vivo Y100",
+        "category": "Smartphone",
+        "brand": "Vivo",
+        "specs": "Sạc 80W, Thiết kế đổi màu",
+        "warranty": "12 tháng",
+        "batery": "5000mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-15",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-091",
+        "name": "Realme C67",
+        "category": "Smartphone",
+        "brand": "Realme",
+        "specs": "Snapdragon 685, Camera 108MP",
+        "warranty": "12 tháng",
+        "batery": "5000mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-01-25",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-092",
+        "name": "Nokia G42 5G",
+        "category": "Smartphone",
+        "brand": "Nokia",
+        "specs": "Dễ dàng sửa chữa (QuickFix)",
+        "warranty": "12 tháng",
+        "batery": "5000mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-02-20",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-093",
+        "name": "ASUS Zenfone 11 Ultra",
+        "category": "Smartphone",
+        "brand": "ASUS",
+        "specs": "Màn hình 144Hz, Snapdragon 8 Gen 3",
+        "warranty": "12 tháng",
+        "batery": "5500mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-10",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-094",
+        "name": "Tecno Camon 30 Premier",
+        "category": "Smartphone",
+        "brand": "Tecno",
+        "specs": "Thiết kế Vintage, Dimensity 8200",
+        "warranty": "13 tháng",
+        "batery": "5000mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-30",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-095",
+        "name": "Infinix GT 20 Pro",
+        "category": "Smartphone",
+        "brand": "Infinix",
+        "specs": "Gaming phone giá rẻ, 144Hz",
+        "warranty": "12 tháng",
+        "batery": "5000mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-02-14",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-096",
+        "name": "Dell OptiPlex 7010 Micro",
+        "category": "Desktop",
+        "brand": "Dell",
+        "specs": "i5-13500T, 16GB, Siêu nhỏ gọn",
+        "warranty": "36 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-01-12",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-097",
+        "name": "HP Z2 Mini G9",
+        "category": "Desktop",
+        "brand": "HP",
+        "specs": "i7-13700, RTX A2000, Workstation mini",
+        "warranty": "36 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-05",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-098",
+        "name": "ASUS NUC 14 Pro",
+        "category": "Desktop",
+        "brand": "ASUS",
+        "specs": "Core Ultra 7, Barebone",
+        "warranty": "36 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-03-25",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-099",
+        "name": "Lenovo ThinkCentre M70q",
+        "category": "Desktop",
+        "brand": "Lenovo",
+        "specs": "i5-13400T, 8GB, Bảo mật doanh nghiệp",
+        "warranty": "36 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-02-10",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-100",
+        "name": "Apple Mac Pro 2025",
+        "category": "Desktop",
+        "brand": "Apple",
+        "specs": "M2 Ultra, 128GB RAM, 2TB SSD",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-12",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-101",
+        "name": "Apple MacBook Pro 14-inch M3 Pro",
+        "category": "Laptop",
+        "brand": "Apple",
+        "specs": "M3 Pro, 18GB RAM, 512GB SSD, Liquid Retina XDR",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-12",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-102",
+        "name": "Dell XPS 15 9530",
+        "category": "Laptop",
+        "brand": "Dell",
+        "specs": "i7-13700H, 16GB RAM, 512GB SSD, RTX 4050",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-11",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-103",
+        "name": "Lenovo ThinkPad X1 Carbon Gen 11",
+        "category": "Laptop",
+        "brand": "Lenovo",
+        "specs": "i5-1335U, 16GB RAM, 512GB SSD, Siêu nhẹ",
+        "warranty": "36 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-10",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-104",
+        "name": "ASUS ROG Zephyrus G14",
+        "category": "Laptop",
+        "brand": "ASUS",
+        "specs": "Ryzen 9 7940HS, 16GB RAM, 512GB SSD, RTX 4060",
+        "warranty": "24 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-09",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-105",
+        "name": "HP Spectre x360 14",
+        "category": "Laptop",
+        "brand": "HP",
+        "specs": "i7-1355U, 16GB RAM, 512GB SSD, 2-in-1",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-08",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-106",
+        "name": "Acer Predator Helios Neo 16",
+        "category": "Laptop",
+        "brand": "Acer",
+        "specs": "i7-13700HX, 16GB RAM, 512GB SSD, RTX 4050",
+        "warranty": "24 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-07",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-107",
+        "name": "MSI Stealth 16 Studio",
+        "category": "Laptop",
+        "brand": "MSI",
+        "specs": "i7-13700H, 16GB RAM, 512GB SSD, RTX 4060",
+        "warranty": "24 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-06",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-108",
+        "name": "Razer Blade 14",
+        "category": "Laptop",
+        "brand": "Razer",
+        "specs": "Ryzen 9 7940HS, 16GB RAM, 512GB SSD, RTX 4060",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-05",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-109",
+        "name": "Samsung Galaxy Book 3 Pro",
+        "category": "Laptop",
+        "brand": "Samsung",
+        "specs": "i5-1340P, 16GB RAM, 512GB SSD, AMOLED",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-04",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-110",
+        "name": "LG Gram 16",
+        "category": "Laptop",
+        "brand": "LG",
+        "specs": "i5-1340P, 16GB RAM, 512GB SSD, Siêu nhẹ",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-03",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-111",
+        "name": "Apple iPhone 15 Pro Max 256GB",
+        "category": "Smartphone",
+        "brand": "Apple",
+        "specs": "Titanium, A17 Pro, Dynamic Island",
+        "warranty": "12 tháng",
+        "batery": "4441mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-12",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-112",
+        "name": "Samsung Galaxy S24 Ultra",
+        "category": "Smartphone",
+        "brand": "Samsung",
+        "specs": "Snapdragon 8 Gen 3, S Pen, AI Features",
+        "warranty": "12 tháng",
+        "batery": "5000mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-11",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-113",
+        "name": "Xiaomi 14 Pro",
+        "category": "Smartphone",
+        "brand": "Xiaomi",
+        "specs": "Leica Optics, Snapdragon 8 Gen 3",
+        "warranty": "18 tháng",
+        "batery": "4880mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-10",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-114",
+        "name": "OnePlus 12",
+        "category": "Smartphone",
+        "brand": "OnePlus",
+        "specs": "Snapdragon 8 Gen 3, Hasselblad Camera",
+        "warranty": "12 tháng",
+        "batery": "5400mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-09",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-115",
+        "name": "ASUS ROG Phone 8 Pro",
+        "category": "Smartphone",
+        "brand": "ASUS",
+        "specs": "Gaming Phone, Snapdragon 8 Gen 3",
+        "warranty": "12 tháng",
+        "batery": "5500mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-08",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-116",
+        "name": "Google Pixel 8 Pro",
+        "category": "Smartphone",
+        "brand": "Google",
+        "specs": "AI Features, Tensor G3, 7 năm updates",
+        "warranty": "12 tháng",
+        "batery": "5050mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-07",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-117",
+        "name": "Sony Xperia 1 V",
+        "category": "Smartphone",
+        "brand": "Sony",
+        "specs": "Camera Alpha, 4K Display",
+        "warranty": "12 tháng",
+        "batery": "5000mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-06",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-118",
+        "name": "Motorola Edge 40 Pro",
+        "category": "Smartphone",
+        "brand": "Motorola",
+        "specs": "Snapdragon 8 Gen 2, 165Hz Display",
+        "warranty": "12 tháng",
+        "batery": "4600mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-05",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-119",
+        "name": "Vivo X90 Pro",
+        "category": "Smartphone",
+        "brand": "Vivo",
+        "specs": "Zeiss Optics, Dimensity 9200",
+        "warranty": "12 tháng",
+        "batery": "4870mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-04",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-120",
+        "name": "Realme GT 5 Pro",
+        "category": "Smartphone",
+        "brand": "Realme",
+        "specs": "Snapdragon 8 Gen 3, 144Hz",
+        "warranty": "12 tháng",
+        "batery": "5400mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-03",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-121",
+        "name": "Lenovo Legion Pro 7i",
+        "category": "Laptop",
+        "brand": "Lenovo",
+        "specs": "i9-13900HX, RTX 4070, 240Hz",
+        "warranty": "24 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-12",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-122",
+        "name": "Dell Alienware M16",
+        "category": "Laptop",
+        "brand": "Dell",
+        "specs": "i7-13700HX, RTX 4070, RGB",
+        "warranty": "24 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-11",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-123",
+        "name": "ASUS ROG Strix Scar 16",
+        "category": "Laptop",
+        "brand": "ASUS",
+        "specs": "i9-13980HX, RTX 4080, Mini LED",
+        "warranty": "24 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-10",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-124",
+        "name": "MSI Titan GT77",
+        "category": "Laptop",
+        "brand": "MSI",
+        "specs": "i9-13980HX, RTX 4090, Desktop Replacement",
+        "warranty": "24 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-09",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-125",
+        "name": "Razer Blade 16",
+        "category": "Laptop",
+        "brand": "Razer",
+        "specs": "i9-13950HX, RTX 4080, Dual-Mode Mini LED",
+        "warranty": "24 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-08",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-126",
+        "name": "Apple Watch Ultra 3",
+        "category": "Smartwatch",
+        "brand": "Apple",
+        "specs": "Titanium, GPS + Cellular, Thám hiểm",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-12",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-127",
+        "name": "Samsung Galaxy Watch 6 Classic",
+        "category": "Smartwatch",
+        "brand": "Samsung",
+        "specs": "Viền xoay vật lý, ECG, Body Composition",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-11",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-128",
+        "name": "Garmin Fenix 7 Pro",
+        "category": "Smartwatch",
+        "brand": "Garmin",
+        "specs": "Pin 2 tuần, GPS Đa băng tần, Đèn pin tích hợp",
+        "warranty": "24 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-10",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-129",
+        "name": "Xiaomi Watch S3",
+        "category": "Smartwatch",
+        "brand": "Xiaomi",
+        "specs": "Màn hình AMOLED, 14 ngày pin",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-09",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-130",
+        "name": "Huawei Watch GT 4",
+        "category": "Smartwatch",
+        "brand": "Huawei",
+        "specs": "Thiết kế thời trang, Theo dõi sức khỏe chuyên sâu",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-08",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-131",
+        "name": "Fitbit Sense 2",
+        "category": "Smartwatch",
+        "brand": "Fitbit",
+        "specs": "Stress Management, EDA Sensor",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-07",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-132",
+        "name": "Amazfit GTR 5",
+        "category": "Smartwatch",
+        "brand": "Amazfit",
+        "specs": "15 ngày pin, GPS 2 băng tần",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-06",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-133",
+        "name": "Apple Watch SE 2",
+        "category": "Smartwatch",
+        "brand": "Apple",
+        "specs": "Giá tốt, Theo dõi sức khỏe cơ bản",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-05",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-134",
+        "name": "Samsung Galaxy Watch 5 Pro",
+        "category": "Smartwatch",
+        "brand": "Samsung",
+        "specs": "Pin 80 giờ, Chuyên dụng thể thao",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-04",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-135",
+        "name": "AirPods Pro 2",
+        "category": "Audio",
+        "brand": "Apple",
+        "specs": "Chống ồn chủ động, Adaptive Transparency",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-12",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-136",
+        "name": "Sony WH-1000XM5",
+        "category": "Audio",
+        "brand": "Sony",
+        "specs": "Chống ồn đỉnh cao, Âm thanh Hi-Res",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-11",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-137",
+        "name": "Bose QuietComfort Ultra",
+        "category": "Audio",
+        "brand": "Bose",
+        "specs": "Immersive Audio, Comfort fit",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-10",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-138",
+        "name": "JBL Charge 5",
+        "category": "Audio",
+        "brand": "JBL",
+        "specs": "Chống nước IP67, Pin 20h",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-09",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-139",
+        "name": "Marshall Emberton II",
+        "category": "Audio",
+        "brand": "Marshall",
+        "specs": "Thiết kế cổ điển, 30h pin",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-08",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-140",
+        "name": "AirPods 3",
+        "category": "Audio",
+        "brand": "Apple",
+        "specs": "Spatial Audio, Thiết kế công thái học",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-07",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-141",
+        "name": "Samsung Galaxy Tab S9 FE",
+        "category": "Tablet",
+        "brand": "Samsung",
+        "specs": "Kèm bút S Pen, Kháng nước IP68",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-12",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-142",
+        "name": "iPad Air 5",
+        "category": "Tablet",
+        "brand": "Apple",
+        "specs": "Chip M1, Hỗ trợ Apple Pencil 2",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-11",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-143",
+        "name": "Lenovo Tab P11 Gen 2",
+        "category": "Tablet",
+        "brand": "Lenovo",
+        "specs": "Màn hình 2K, 4 loa JBL",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-10",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-144",
+        "name": "Xiaomi Pad 6",
+        "category": "Tablet",
+        "brand": "Xiaomi",
+        "specs": "Snapdragon 870, 144Hz",
+        "warranty": "18 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-09",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-145",
+        "name": "Realme Pad X",
+        "category": "Tablet",
+        "brand": "Realme",
+        "specs": "5G, Màn hình lớn 11 inch",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-08",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-146",
+        "name": "ASUS ROG Phone 7",
+        "category": "Smartphone",
+        "brand": "ASUS",
+        "specs": "Snapdragon 8 Gen 2, AirTrigger",
+        "warranty": "12 tháng",
+        "batery": "6000mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-12",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-147",
+        "name": "Samsung Galaxy Z Fold 5",
+        "category": "Smartphone",
+        "brand": "Samsung",
+        "specs": "Màn hình gập, S Pen Fold Edition",
+        "warranty": "12 tháng",
+        "batery": "4400mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-11",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-148",
+        "name": "Xiaomi 13 Ultra",
+        "category": "Smartphone",
+        "brand": "Xiaomi",
+        "specs": "Camera Leica 1 inch, Sạc 90W",
+        "warranty": "18 tháng",
+        "batery": "5000mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-10",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-149",
+        "name": "OnePlus 11",
+        "category": "Smartphone",
+        "brand": "OnePlus",
+        "specs": "Snapdragon 8 Gen 2, Sạc 100W",
+        "warranty": "12 tháng",
+        "batery": "5000mah",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-09",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-150",
+        "name": "Dell XPS 13 9315",
+        "category": "Laptop",
+        "brand": "Dell",
+        "specs": "i5-1230U, 8GB RAM, Siêu mỏng nhẹ",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-12",
+            "status": "active"
+        }
+    },
+    {
+        "id": "PROD-151",
+        "name": "HP Pavilion Aero 13",
+        "category": "Laptop",
+        "brand": "HP",
+        "specs": "Ryzen 5 7535U, 16GB RAM, 1.1kg",
+        "warranty": "12 tháng",
+        "metadata": {
+            "doc_type": "product",
+            "updated_at": "2026-04-11",
+            "status": "active"
+        }
+    }
+]
