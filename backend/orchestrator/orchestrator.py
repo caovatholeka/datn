@@ -86,18 +86,17 @@ class Orchestrator:
     Inject ToolExecutor và RAG caller qua constructor để dễ unit-test.
     """
 
-    # Từ khóa nhận diện lời chào - xử lý riêng thay vì reject
-    _GREETING_KEYWORDS = {
-        "xin chào", "chào shop", "chào bạn", "hello", "hi shop",
-        "hey", "good morning", "good evening", "alo", "ơi shop", "shop ơi",
-    }
-
     def __init__(self, tool_executor: ToolExecutor | None = None):
         self._tool_executor = tool_executor or ToolExecutor()
 
-    def handle_query(self, query: str) -> dict:
+    def handle_query(self, query: str, conversation_history: list | None = None) -> dict:
         """
         Entry point duy nhất – nhận query thô, trả về output có cấu trúc.
+
+        Args:
+            query:                Câu hỏi hiện tại.
+            conversation_history: Lịch sử hội thoại [{role, content}] từ Streamlit.
+                                  Dùng để LLM hiểu ngữ cảnh câu trước.
 
         Returns:
             {
@@ -110,20 +109,6 @@ class Orchestrator:
             }
         """
         try:
-            # ────────────────────────────────────────────────
-            # BƯỚC 0: Greeting Detection (trước mọi thứ khác)
-            # ────────────────────────────────────────────────
-            q_lower = query.lower().strip()
-            if self._is_greeting(q_lower):
-                return self._build_output(
-                    status="greeting",
-                    intent="greeting",
-                    sub_intent="greeting",
-                    route="direct",
-                    data={},
-                    message=query,
-                )
-
             # ────────────────────────────────────────────────
             # BƯỚC 1: Safety Check
             # ────────────────────────────────────────────────
@@ -139,12 +124,26 @@ class Orchestrator:
                 )
 
             # ────────────────────────────────────────────────
-            # BƯỚC 2: Classify Query
+            # BƯỚC 2: Classify Query (LLM-based)
             # ────────────────────────────────────────────────
-            classification = classify_query(query)
-            intent      = classification["intent"]
-            sub_intent  = classification["sub_intent"]
-            all_subs    = set(classification.get("all_sub_intents", [sub_intent]))
+            classification = classify_query(query, conversation_history)
+            intent        = classification["intent"]
+            sub_intent    = classification["sub_intent"]
+            all_subs      = set(classification.get("all_sub_intents", [sub_intent]))
+            # product_hint: tên sản phẩm LLM trích xuất được từ ngữ cảnh hội thoại
+            # Dùng làm fallback khi query thô không chứa tên sản phẩm (vd: "còn hàng không?")
+            product_hint  = classification.get("product_hint")
+
+            # Greeting được LLM detect → trả về ngay
+            if intent == "greeting":
+                return self._build_output(
+                    status="greeting",
+                    intent="greeting",
+                    sub_intent="greeting",
+                    route="direct",
+                    data={},
+                    message=query,
+                )
 
             # ────────────────────────────────────────────────
             # BƯỚC 3: Decide Route
@@ -172,7 +171,7 @@ class Orchestrator:
             final_message = ""
 
             if route == "tool":
-                tool_result = self._execute_tool(query)
+                tool_result = self._execute_tool(query, list(all_subs), product_hint)
                 is_valid, reason = validate_result(tool_result)
 
                 if not is_valid:
@@ -242,7 +241,7 @@ class Orchestrator:
                 rag_context = rag_result.get("context", "")
 
                 if tool_sub:
-                    tool_result  = self._execute_tool(query)
+                    tool_result  = self._execute_tool(query, list(all_subs), product_hint)
                     tool_status  = tool_result.get("status")
                     tool_data    = tool_result.get("data", {})
                     tool_msg     = tool_result.get("message", "")
@@ -312,13 +311,14 @@ class Orchestrator:
                 message=f"Lỗi hệ thống không mong đợi: {str(e)}",
             )
 
-    def _is_greeting(self, q_lower: str) -> bool:
-        """Kiểm tra câu có phải lời chào/mở đầu cuộc hội thoại không."""
-        return any(kw in q_lower for kw in self._GREETING_KEYWORDS)
-
-    def _execute_tool(self, query: str) -> dict:
+    def _execute_tool(
+        self,
+        query: str,
+        sub_intents: list | None = None,
+        product_hint: str | None = None,
+    ) -> dict:
         """Wrapper gọi ToolExecutor và chuẩn hóa output."""
-        return self._tool_executor.execute(query)
+        return self._tool_executor.execute(query, sub_intents=sub_intents, product_hint=product_hint)
 
     @staticmethod
     def _build_output(

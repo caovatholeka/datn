@@ -16,10 +16,16 @@ class ToolExecutor:
     4. Tổng hợp và trả về kết quả chuẩn hóa
     """
 
-    def execute(self, query: str) -> dict:
+    def execute(self, query: str, sub_intents: list | None = None, product_hint: str | None = None) -> dict:
         """
         Entry point duy nhất - nhận query thô, trả về kết quả có cấu trúc.
-        
+
+        Args:
+            query:        Câu hỏi thô của người dùng.
+            sub_intents:  Danh sách sub-intent từ Orchestrator (tránh gọi LLM 2 lần).
+            product_hint: Tên sản phẩm LLM suy luận từ ngữ cảnh hội thoại.
+                          Dùng làm fallback khi query thô không chứa tên sản phẩm.
+
         Returns:
             {
                 "status": "success" | "need_clarification" | "error",
@@ -30,11 +36,20 @@ class ToolExecutor:
         """
         try:
             # ---- BƯỚC 1: Phát hiện ý định ----
-            intent = detect_intent(query)
+            # Nếu Orchestrator đã classify sẵn → dùng lại, không gọi LLM thêm lần nữa
+            if sub_intents is not None:
+                intent = self._map_sub_intents(sub_intents)
+            else:
+                intent = detect_intent(query)
 
             # ---- BƯỚC 2: Phân giải sản phẩm (luôn chạy trước) ----
             resolver = TOOLS["resolve_product"]
             resolve_result = resolver.run(query=query)
+
+            # Fallback: nếu query không chứa tên sản phẩm (vd: "còn hàng không?")
+            # nhưng LLM đã suy luận được product_hint từ ngữ cảnh → thử lại với hint
+            if resolve_result["status"] == "not_found" and product_hint:
+                resolve_result = resolver.run(query=product_hint)
 
             # ---- BƯỚC 3: Xử lý kết quả phân giải ----
             if resolve_result["status"] == "not_found":
@@ -100,6 +115,22 @@ class ToolExecutor:
                 "data": {},
                 "message": f"Lỗi hệ thống không mong đợi: {str(e)}"
             }
+
+    @staticmethod
+    def _map_sub_intents(sub_intents: list) -> str:
+        """Ánh xạ danh sách sub_intents từ LLM → intent string mà ToolExecutor hiểu."""
+        subs = set(sub_intents)
+        has_stock = "check_stock" in subs
+        has_price = "check_price" in subs
+        if has_stock and has_price:
+            return "check_stock_and_price"
+        if has_stock:
+            return "check_stock"
+        if has_price:
+            return "check_price"
+        if "product_info" in subs:
+            return "product_search"
+        return "unknown"
 
     def _build_message(self, intent: str, product_name: str, data: dict) -> str:
         """Xây dựng câu trả lời tự nhiên từ kết quả của các tools."""

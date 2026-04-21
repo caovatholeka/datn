@@ -6,56 +6,169 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from backend.orchestrator.orchestrator import Orchestrator
-from backend.llm.response_generator import generate_response
+from backend.llm.response_generator import generate_response_stream, generate_suggestions
+from backend.memory.memory_manager import MemoryManager
+from frontend.stt_helper import transcribe_audio
+from streamlit_mic_recorder import mic_recorder
 
-# Khởi tạo trang Web bằng Streamlit
+# ──────────────────────────────────────────────────────────
+# CẤU HÌNH TRANG
+# ──────────────────────────────────────────────────────────
 st.set_page_config(page_title="AI Chatbot Thương Mại", page_icon="🤖", layout="centered")
 st.title("🤖 Trợ Lý Ảo Chatbot Bán Hàng Điện Tử")
-st.caption("DATN - Đồ án tốt nghiệp: RAG + Tool Calling")
+st.caption("DATN - Đồ án tốt nghiệp: RAG + Tool Calling + Conversation Memory")
 
-# Khởi tạo Orchestrator dạng Singleton (Lưu trong Session state để không phải tạo lại khi load)
+# ──────────────────────────────────────────────────────────
+# SIDEBAR – Cài đặt
+# ──────────────────────────────────────────────────────────
+with st.sidebar:
+    st.header("⚙️ Cài đặt")
+    enable_suggestions = st.toggle(
+        "💡 Gợi ý câu hỏi tiếp theo",
+        value=False,
+        help="Bật để AI tự động gợi ý 2-3 câu hỏi follow-up sau mỗi câu trả lời.\n"
+             "Lưu ý: Tốn thêm 1 lần gọi API mỗi lượt chat.",
+    )
+    st.caption("🔴 Tắt = tiết kiệm token  |  🟢 Bật = trải nghiệm đầy đủ")
+
+    st.divider()
+
+    # ──────────────────────────────────────────────────────────
+    # NHẬP BẶNG GIỌNG NÓI (Speech-to-Text)
+    # ──────────────────────────────────────────────────────────
+    st.subheader("🎤 Nhập bằng giọng nói")
+    st.caption("Nhấn nút, nói câu hỏi, nhấn lại để dừng. AI sẽ tự động hiểu tiếng Việt.")
+
+    audio = mic_recorder(
+        start_prompt="🎤 Nhấn để nói",
+        stop_prompt="⏹️ Dừng",
+        key="mic_recorder",
+        format="webm",          # Chrome/Edge xuất webm, Whisper hỗ trợ sẵn
+        use_container_width=True,
+    )
+
+    # Xử lý audio mới (dùng ID để tránh xử lý lặp khi Streamlit rerun)
+    if (
+        audio
+        and audio.get("bytes")
+        and audio.get("id") != st.session_state.get("last_audio_id")
+    ):
+        st.session_state.last_audio_id = audio["id"]
+        with st.spinner("🔄 Đang nhận dạng giọng nói..."):
+            transcribed = transcribe_audio(audio["bytes"], format="webm")
+
+        if transcribed:
+            st.success(f"✅ **{transcribed}**")
+            st.session_state.pending_query = transcribed
+            st.rerun()
+        else:
+            st.warning("⚠️ Không nghe rõ, vui lòng nói lại.")
+
+# ──────────────────────────────────────────────────────────
+# KHỞI TẠO SESSION STATE
+# ──────────────────────────────────────────────────────────
 if "orchestrator" not in st.session_state:
     st.session_state.orchestrator = Orchestrator()
 
-# Khởi tạo mảng lưu trữ Lịch sử trò chuyện
+if "memory" not in st.session_state:
+    st.session_state.memory = MemoryManager()
+
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# Vẽ lại toàn bộ tin nhắn cũ lên màn hình mỗi khi tương tác
+if "conversation_summary" not in st.session_state:
+    st.session_state.conversation_summary = ""
+
+if "last_audio_id" not in st.session_state:
+    st.session_state.last_audio_id = None
+
+# Gợi ý câu hỏi tiếp theo (hiển thị sau mỗi lượt trả lời)
+if "suggestions" not in st.session_state:
+    st.session_state.suggestions = []
+
+# Query được kích hoạt bởi click vào nút gợi ý
+if "pending_query" not in st.session_state:
+    st.session_state.pending_query = None
+
+# ──────────────────────────────────────────────────────────
+# HIỂN THỊ LỊCH SỬ TIN NHẮN
+# ──────────────────────────────────────────────────────────
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
 
-# Khung nhập text ở dưới cùng
-user_query = st.chat_input("Hỏi tôi về thông tin sản phẩm, chính sách, v.v...")
+# ──────────────────────────────────────────────────────────
+# GỢI Ý CÂU HỎI TIẾP THEO (hiển thị phía dưới lịch sử)
+# ──────────────────────────────────────────────────────────
+if st.session_state.suggestions:
+    st.markdown("💡 **Bạn có thể hỏi tiếp:**")
+    cols = st.columns(len(st.session_state.suggestions))
+    for i, (col, sug) in enumerate(zip(cols, st.session_state.suggestions)):
+        if col.button(f"💬 {sug}", key=f"sug_{i}", use_container_width=True):
+            st.session_state.pending_query = sug
+            st.session_state.suggestions = []   # Xóa gợi ý cũ sau khi click
+            st.rerun()
+
+# ──────────────────────────────────────────────────────────
+# XỬ LÝ INPUT (từ nút gợi ý hoặc chat_input)
+# ──────────────────────────────────────────────────────────
+# Ưu tiên pending_query (từ nút click) nếu có
+if st.session_state.pending_query:
+    user_query = st.session_state.pending_query
+    st.session_state.pending_query = None
+else:
+    user_query = st.chat_input("Hỏi tôi về thông tin sản phẩm, chính sách, v.v...")
 
 if user_query:
-    # 1. In câu hỏi của người dùng ra màn hình và lưu vào mảng
+    # Xóa gợi ý cũ khi người dùng tự nhập câu mới
+    st.session_state.suggestions = []
+
+    # ── Hiển thị câu hỏi người dùng ──
     with st.chat_message("user"):
         st.markdown(user_query)
     st.session_state.messages.append({"role": "user", "content": user_query})
 
-    # 2. In câu trả lời của Bot ra màn hình
+    # ── Xử lý và hiển thị câu trả lời ──
     with st.chat_message("assistant"):
-        # Hiển thị icon Loading chờ xử lý AI
-        with st.spinner("Đang suy nghĩ..."):
-            
-            # --- ĐOẠN CORE: Gọi vào Backend của bạn ---
-            # Bước A: Chạy qua não bộ Orchestrator
-            orch_result = st.session_state.orchestrator.handle_query(user_query)
-            
-            # Bước B: Gọi LLM (OpenAI) để sinh chữ tự nhiên
-            llm_result = generate_response(orch_result, query=user_query)
-            
-            # Lấy text cuối cùng từ LLM
-            final_text = llm_result["text"]
-            
-        # Hiển thị chữ lên màn hình
-        st.markdown(final_text)
-        
-        # Tùy chọn in thêm thông tin Debug (để thầy cô xem cho rõ luồng dữ liệu JSON)
+
+        # PHASE 1: Orchestrator (chạy ngầm, chỉ hiển thị spinner)
+        with st.spinner("⚙️ Đang phân tích..."):
+            context = st.session_state.memory.build_context(
+                st.session_state.messages[:-1],
+                st.session_state.conversation_summary,
+            )
+            orch_result = st.session_state.orchestrator.handle_query(
+                user_query,
+                conversation_history=context,
+            )
+
+        # PHASE 2: Stream câu trả lời LLM từng chữ
+        stream    = generate_response_stream(orch_result, query=user_query)
+        final_text = st.write_stream(stream)   # hiện chữ từng ký tự, trả về full text
+
+        # Debug: xem luồng tư duy ẩn
         with st.expander("🛠️ Xem luồng tư duy ẩn (JSON)"):
             st.json(orch_result)
 
-    # Lưu câu của bot vào mảng lịch sử
+    # ── Lưu câu trả lời vào lịch sử ──
     st.session_state.messages.append({"role": "assistant", "content": final_text})
+
+    # PHASE 3: Sinh gợi ý câu hỏi tiếp theo (chỉ khi toggle bật)
+    if enable_suggestions:
+        with st.spinner("💡 Đang tạo gợi ý..."):
+            st.session_state.suggestions = generate_suggestions(
+                orch_result, user_query, final_text
+            )
+    else:
+        st.session_state.suggestions = []  # Xóa gợi ý cũ nếu toggle đang tắt
+
+    # PHASE 4: Cập nhật bộ nhớ tóm tắt (nếu đến ngưỡng)
+    if st.session_state.memory.should_summarize(st.session_state.messages):
+        with st.spinner("💾 Đang cập nhật bộ nhớ hội thoại..."):
+            st.session_state.conversation_summary = st.session_state.memory.summarize(
+                st.session_state.messages,
+                st.session_state.conversation_summary,
+            )
+
+    # Rerun để hiển thị gợi ý ở đúng vị trí (phía trên chat_input)
+    st.rerun()
