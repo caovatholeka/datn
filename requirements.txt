@@ -1,6 +1,9 @@
 langchain
 langchain-openai
+langchain-chroma
 chromadb
 python-dotenv
 tiktoken
 langchain_community
+flashrank
+streamlit

@@ -26,67 +26,58 @@ from .safety_guard import is_safe_query
 from .router import decide_route
 from .validator import validate_result, validate_rag_result
 from ..tools.tool_executor import ToolExecutor
+from ..RAG_pipeline import VectorDBManager, retrieve, rerank, build_context
 
+# Đường dẫn gốc dự án (datn/)
+_BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # ============================================================
-# RAG STUB - Giả lập RAG pipeline cho đến khi tích hợp thật
-# Khi sẵn sàng: thay thế hàm này bằng lời gọi VectorDBManager + retriever thật
+# RAG PIPELINE - Gọi ChromaDB thật qua VectorDBManager
 # ============================================================
 def _call_rag_pipeline(query: str, sub_intent: str) -> dict:
     """
-    Stub giả lập RAG pipeline.
-    TODO: Thay bằng:
-        from RAG_pipeline import VectorDBManager, retrieve, rerank, build_context
-        db = VectorDBManager(BASE_DIR)
-        docs = retrieve(query, db, top_k=5)
-        reranked = rerank(query, docs)
-        context = build_context(reranked)
-        return {"status": "success", "context": context, "sources": [...]}
+    Gọi RAG pipeline thật: retrieve → rerank → build_context.
     """
-    # Mock data hữu ích cho các sub_intent khác nhau
-    _mock_responses = {
-        "policy": {
+    try:
+        # Quan trọng: Tạo DB Instance mới mỗi lần gọi để tránh lỗi Threading của Streamlit với SQLite
+        db = VectorDBManager(_BASE_DIR)
+
+        # Retrieve top-k chunks từ ChromaDB (có metadata filtering bên trong)
+        docs = retrieve(query, db, top_k=5)
+
+        if not docs:
+            return {
+                "status": "success",
+                "context": "Không tìm thấy thông tin liên quan trong cơ sở dữ liệu.",
+                "sources": [],
+            }
+
+        # Rerank bằng FlashRank AI để lấy chunk liên quan nhất
+        reranked = rerank(query, docs)
+
+        # Ghép context từ các chunk đã rerank
+        context = build_context(reranked)
+
+        # Thu thập danh sách nguồn tài liệu (dedup)
+        sources = list({
+            d["metadata"].get("source", "unknown")
+            for d in reranked
+            if d.get("metadata")
+        })
+
+        return {
             "status": "success",
-            "context": (
-                "Chính sách bảo hành: Điện thoại và laptop được bảo hành từ 12 đến 24 tháng. "
-                "Chính sách đổi trả: Đổi trả trong vòng 7 ngày nếu sản phẩm lỗi kỹ thuật. "
-                "Hỗ trợ bảo hành chính hãng tại trung tâm hoặc cửa hàng."
-            ),
-            "sources": ["policy.txt"],
-        },
-        "product_info": {
-            "status": "success",
-            "context": (
-                "Thông tin sản phẩm được lấy từ cơ sở dữ liệu nội bộ. "
-                "Vui lòng cung cấp tên sản phẩm cụ thể để được tư vấn chi tiết hơn."
-            ),
-            "sources": ["products.json"],
-        },
-        "recommendation": {
-            "status": "success",
-            "context": (
-                "Để gợi ý sản phẩm phù hợp, tôi cần biết thêm về nhu cầu của bạn: "
-                "ngân sách, mục đích sử dụng (gaming, học tập, chụp ảnh,...), "
-                "và thương hiệu ưa thích."
-            ),
-            "sources": ["faq.txt"],
-        },
-        "faq": {
-            "status": "success",
-            "context": (
-                "Câu hỏi thường gặp: "
-                "1. Thời gian giao hàng nội thành 1-2 ngày, tỉnh thành 2-5 ngày. "
-                "2. Hỗ trợ COD và trả góp qua thẻ tín dụng. "
-                "3. Cài đặt phần mềm miễn phí sau khi mua."
-            ),
-            "sources": ["faq.txt"],
-        },
-    }
-    return _mock_responses.get(sub_intent, {
-        "status": "success",
-        "context": "Tôi đã tìm kiếm nhưng không tìm thấy thông tin cụ thể cho câu hỏi này.",
-        "sources": [],
-    })
+            "context": context,
+            "sources": sources,
+        }
+
+    except Exception as e:
+        return {
+            "status": "error",
+            "context": "",
+            "sources": [],
+            "message": f"Lỗi RAG pipeline: {str(e)}",
+        }
 
 
 class Orchestrator:
@@ -97,9 +88,8 @@ class Orchestrator:
 
     # Từ khóa nhận diện lời chào - xử lý riêng thay vì reject
     _GREETING_KEYWORDS = {
-        "chào", "hello", "hi", "hey", "xin chào", "good morning",
-        "good evening", "alo", "ello", "ơi shop", "shop ơi",
-        "cho hỏi", "tư vấn", "giúp đỡ", "hỗ trợ",
+        "xin chào", "chào shop", "chào bạn", "hello", "hi shop",
+        "hey", "good morning", "good evening", "alo", "ơi shop", "shop ơi",
     }
 
     def __init__(self, tool_executor: ToolExecutor | None = None):
@@ -216,6 +206,15 @@ class Orchestrator:
 
             elif route == "rag":
                 rag_result = _call_rag_pipeline(query, sub_intent)
+                
+                # Nếu RAG đã báo lỗi thực sự bên dưới (như OpenAI auth error), ném thẳng ra
+                if rag_result.get("status") == "error":
+                    return self._build_output(
+                        status="error",
+                        intent=intent, sub_intent=sub_intent, route=route,
+                        data={}, message=rag_result.get("message", "Lỗi ẩn trong RAG"),
+                    )
+
                 is_valid, reason = validate_rag_result(rag_result.get("context", ""))
 
                 if not is_valid:

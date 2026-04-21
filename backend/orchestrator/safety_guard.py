@@ -10,7 +10,7 @@ Chạy trước tất cả các xử lý khác trong pipeline.
 _BLOCKED_TOPICS: list[str] = [
     # An ninh mạng / hack
     "hack", "crack", "exploit", "sql injection", "xss", "ddos",
-    "brute force", "keylogger", "malware", "virus", "phishing",
+    "brute force", "keylogger", "malware", "phần mềm độc hại", "phishing",
     "bypass", "reverse engineer", "decompile",
 
     # Chính trị / nhạy cảm
@@ -39,7 +39,7 @@ _DOMAIN_SIGNALS: list[str] = [
 ]
 
 # Nếu query quá ngắn và không có tín hiệu domain → coi là off-topic
-_MIN_QUERY_LENGTH = 3
+_MIN_QUERY_LENGTH = 2
 
 
 def is_safe_query(query: str) -> tuple[bool, str]:
