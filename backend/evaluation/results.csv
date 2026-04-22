@@ -1,0 +1,28 @@
+﻿id,query,expected_intent,got_intent,intent_correct,confidence,got_hint,latency_ms,note
+1,xin chào shop ạ,greeting,greeting,ĐÚNG,high,,1686,Chào hỏi cơ bản
+2,shop ơi cho mình hỏi tý nhé,greeting,greeting,ĐÚNG,high,,1134,"Mở đầu cuộc trò chuyện, chưa hỏi gì cụ thể"
+3,iphone 16 giá bao nhiêu tiền vậy?,tool,tool,ĐÚNG,high,iPhone 16,1658,Hỏi giá thẳng — phổ biến nhất
+4,samsung galaxy s25 ultra bán bao nhiêu?,tool,tool,ĐÚNG,high,Samsung Galaxy S25 Ultra,1642,Dùng 'bán' thay vì 'giá'
+5,macbook air m3 mấy tiền vậy bạn,tool,tool,ĐÚNG,high,MacBook Air M3,2457,"Từ thân mật 'bạn', viết tắt 'mấy tiền'"
+6,oppo reno 12 pro có đang sale không?,tool,tool,ĐÚNG,high,Oppo Reno 12 Pro,1840,Hỏi giảm giá/sale — dạng gián tiếp của check_price
+7,samsung s24 fe giá thế nào shop ơi,tool,tool,ĐÚNG,high,Samsung S24 FE,1786,Kêu 'shop ơi' — cách nói dân dã
+8,shop còn iphone 15 pro max không?,tool,tool,ĐÚNG,high,iPhone 15 Pro Max,1348,Hỏi tồn kho thẳng
+9,xiaomi 14t pro còn hàng không bạn?,tool,tool,ĐÚNG,high,Xiaomi 14T Pro,1496,Phổ biến — 'còn hàng không?'
+10,cửa hàng có bán điện thoại samsung không?,tool,tool,ĐÚNG,high,Samsung,2773,Hỏi brand chứ không hỏi model cụ thể
+11,airpods pro gen 2 hiện còn bán không?,tool,tool,ĐÚNG,high,AirPods Pro Gen 2,1455,"Phụ kiện, hỏi 'hiện còn bán không'"
+12,iphone 16 pro còn hàng không và giá bao nhiêu?,hybrid,hybrid,ĐÚNG,high,iPhone 16 Pro,1383,Hỏi cả 2 trong 1 câu — rõ ràng
+13,samsung galaxy s25 giá và tồn kho thế nào?,hybrid,hybrid,ĐÚNG,high,Samsung Galaxy S25,1327,"Đảo thứ tự: giá trước, tồn kho sau"
+14,"xiaomi 14 ultra còn không, mà giá ra sao?",hybrid,hybrid,ĐÚNG,high,Xiaomi 14 Ultra,1408,"Ngôn ngữ rất tự nhiên, có dấu phẩy ngắt"
+15,"sony wh-1000xm5 giá bao nhiêu, có sẵn hàng không?",hybrid,hybrid,ĐÚNG,high,Sony WH-1000XM5,1574,"Tai nghe, dùng 'có sẵn hàng' thay vì 'còn hàng'"
+16,so sánh iphone 16 và samsung s25 đi,rag,rag,ĐÚNG,medium,"iPhone 16, Samsung S25",1500,So sánh 2 flagship — cần RAG
+17,xiaomi 14t pro có mấy camera?,rag,rag,ĐÚNG,medium,Xiaomi 14T Pro,1548,Hỏi thông số kỹ thuật cụ thể
+18,pin iphone 16 pro max xài được bao lâu?,rag,rag,ĐÚNG,medium,iPhone 16 Pro Max,1378,Hỏi tuổi thọ pin — thông số kỹ thuật
+19,airpods pro 2 có chống ồn tốt không?,rag,rag,ĐÚNG,high,AirPods Pro 2,1462,Review/đánh giá tính năng
+20,vivo v40 màn hình bao nhiêu inch?,rag,rag,ĐÚNG,medium,Vivo V40,1846,"Thông số cụ thể, ngắn gọn"
+21,điện thoại chụp ảnh đẹp tầm 15 triệu nên mua gì?,rag,rag,ĐÚNG,high,,1744,Tư vấn theo nhu cầu + ngân sách
+22,laptop gaming pin trâu dưới 25 triệu thì mua cái nào?,rag,rag,ĐÚNG,high,laptop gaming dưới 25 triệu,1961,Điều kiện cụ thể: gaming + pin + giá
+23,tai nghe chống ồn tốt tầm 2 triệu có gì không shop?,rag,rag,ĐÚNG,high,tai nghe chống ồn,1472,Tư vấn phụ kiện theo ngân sách
+24,bảo hành máy bao lâu và làm sao đổi trả?,rag,rag,ĐÚNG,high,,1374,Hỏi chính sách bảo hành + đổi trả
+25,mua online về bị lỗi có được đổi không?,rag,rag,ĐÚNG,high,,1458,Tình huống thực tế: hàng lỗi sau khi mua online
+
+Tổng,,,,,,,100.0%,,

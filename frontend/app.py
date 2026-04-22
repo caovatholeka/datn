@@ -9,6 +9,7 @@ from backend.orchestrator.orchestrator import Orchestrator
 from backend.llm.response_generator import generate_response_stream, generate_suggestions
 from backend.memory.memory_manager import MemoryManager
 from frontend.stt_helper import transcribe_audio
+from frontend.ocr_helper import analyze_product_image
 from streamlit_mic_recorder import mic_recorder
 
 # ──────────────────────────────────────────────────────────
@@ -64,6 +65,62 @@ with st.sidebar:
         else:
             st.warning("⚠️ Không nghe rõ, vui lòng nói lại.")
 
+    st.divider()
+
+    # ──────────────────────────────────────────────────────────
+    # NHẬN DẠNG SẢN PHẨM QUA ẢNH (Vision OCR)
+    # ──────────────────────────────────────────────────────────
+    st.subheader("📸 Nhận dạng sản phẩm qua ảnh")
+    st.caption("Upload ảnh sản phẩm → AI tự động nhận diện và gợi ý hồi.")
+
+    uploaded_img = st.file_uploader(
+        label="Chọn ảnh sản phẩm",
+        type=["jpg", "jpeg", "png", "webp"],
+        key="product_image",
+        label_visibility="collapsed",
+    )
+
+    if uploaded_img:
+        # Hash để tránh gọi API lại với cùng 1 ảnh khi Streamlit rerun
+        file_hash = f"{uploaded_img.name}_{uploaded_img.size}"
+        image_bytes = uploaded_img.read()   # Đọc bytes 1 lần, dùng cho cả preview lấn OCR
+
+        # Hiển thị preview ảnh luôn luôn
+        st.image(image_bytes, use_container_width=True)
+
+        # Chỉ gọi API khi ảnh mới (chưa xử lý lần nào)
+        if file_hash != st.session_state.get("last_ocr_hash"):
+            st.session_state.last_ocr_hash = file_hash
+            st.session_state.ocr_result    = None  # Reset kết quả cũ
+            mime = uploaded_img.type       # vd: "image/jpeg"
+            with st.spinner("🔍 Đang nhận dạng sản phẩm..."):
+                st.session_state.ocr_result = analyze_product_image(image_bytes, mime)
+
+        # Hiển thị kết quả và nút hành động
+        ocr = st.session_state.get("ocr_result")
+        if ocr:
+            if ocr.get("success"):
+                product_name = ocr["full_name"]
+                conf_icon = "🟢" if ocr["confidence"] == "high" else "🟡"
+                st.markdown(f"{conf_icon} **{product_name}**")
+                st.markdown("**Hỏi về sản phẩm này:**")
+                c1, c2, c3 = st.columns(3)
+                if c1.button("💰 Giá", key="ocr_price", use_container_width=True):
+                    st.session_state.pending_query = f"{product_name} giá bao nhiêu?"
+                    st.rerun()
+                if c2.button("📦 Tồn kho", key="ocr_stock", use_container_width=True):
+                    st.session_state.pending_query = f"{product_name} còn hàng không?"
+                    st.rerun()
+                if c3.button("ℹ️ Thông tin", key="ocr_info", use_container_width=True):
+                    st.session_state.pending_query = f"Thông tin chi tiết về {product_name}"
+                    st.rerun()
+            else:
+                st.error(f"❌ {ocr.get('error', 'Không nhận dạng được')}")
+    else:
+        # Người dùng xóa ảnh → reset cache
+        st.session_state.last_ocr_hash = None
+        st.session_state.ocr_result    = None
+
 # ──────────────────────────────────────────────────────────
 # KHỞI TẠO SESSION STATE
 # ──────────────────────────────────────────────────────────
@@ -81,6 +138,13 @@ if "conversation_summary" not in st.session_state:
 
 if "last_audio_id" not in st.session_state:
     st.session_state.last_audio_id = None
+
+# Cache kết quả OCR để không gọi API lại khi Streamlit rerun
+if "last_ocr_hash" not in st.session_state:
+    st.session_state.last_ocr_hash = None
+
+if "ocr_result" not in st.session_state:
+    st.session_state.ocr_result = None
 
 # Gợi ý câu hỏi tiếp theo (hiển thị sau mỗi lượt trả lời)
 if "suggestions" not in st.session_state:
