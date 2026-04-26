@@ -204,8 +204,37 @@ class Orchestrator:
                 final_message = tool_result.get("message", "")
 
             elif route == "rag":
+                # ── Đặc biệt: recommendation → ưu tiên gọi tool trước ──────────
+                if "recommendation" in all_subs:
+                    from ..tools.recommendation_tool import get_recommendations
+                    # Lấy giá sản phẩm tham chiếu nếu có product_hint
+                    ref_price = None
+                    if product_hint:
+                        try:
+                            from ..tools.tool_registry import TOOLS
+                            resolver = TOOLS["resolve_product"]
+                            r = resolver.run(query=product_hint)
+                            if r.get("status") == "found":
+                                from ..tools.tool_registry import TOOLS as T2
+                                pr = T2["get_price_and_promo"].run(product_id=r["product_id"])
+                                if pr.get("status") == "success":
+                                    ref_price = pr.get("final_price")
+                        except Exception:
+                            pass
+
+                    rec_result = get_recommendations(query, reference_price=ref_price)
+
+                    if rec_result.get("status") == "success" and rec_result.get("products"):
+                        return self._build_output(
+                            status="success",
+                            intent=intent, sub_intent="recommendation", route=route,
+                            data={"recommendation": rec_result},
+                            message="recommendation_result",
+                        )
+
+                # ── RAG thông thường ─────────────────────────────────────────────
                 rag_result = _call_rag_pipeline(query, sub_intent)
-                
+
                 # Nếu RAG đã báo lỗi thực sự bên dưới (như OpenAI auth error), ném thẳng ra
                 if rag_result.get("status") == "error":
                     return self._build_output(

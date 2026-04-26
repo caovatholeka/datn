@@ -4,8 +4,10 @@ main.py — FastAPI app entry point
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+import traceback
 
 from api.auth.router  import router as auth_router
 from api.chat.router  import router as chat_router
@@ -15,18 +17,26 @@ app = FastAPI(
     title="DATN Chatbot API",
     description="API cho Chatbot Bán Hàng Điện Tử — RAG + Tool Calling + Persistent Memory",
     version="1.0.0",
-    docs_url="/docs",      # Swagger UI
-    redoc_url="/redoc",    # ReDoc
+    docs_url="/docs",
+    redoc_url="/redoc",
 )
 
-# CORS — cho phép Next.js frontend gọi API
+# CORS — cho phép tất cả origins trong môi trường dev
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
-    allow_credentials=True,
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Global exception handler — lộ lỗi thật khi debug
+@app.exception_handler(Exception)
+async def global_exception_handler(request: Request, exc: Exception):
+    return JSONResponse(
+        status_code=500,
+        content={"detail": str(exc), "traceback": traceback.format_exc()},
+    )
 
 # Đăng ký routers
 app.include_router(auth_router)

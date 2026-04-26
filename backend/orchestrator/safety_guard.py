@@ -1,70 +1,57 @@
 """
 safety_guard.py
-Bộ lọc an toàn: chặn câu hỏi ngoài phạm vi hệ thống bán hàng.
-Chạy trước tất cả các xử lý khác trong pipeline.
+Bộ lọc an toàn tối giản: CHỈ chặn nội dung nguy hiểm/vi phạm pháp luật.
+
+Triết lý thiết kế:
+  - Safety guard KHÔNG phân loại intent — đó là việc của LLM Classifier.
+  - Safety guard KHÔNG dựa vào độ dài hay keyword domain — dễ false positive.
+  - Safety guard CHỈ chặn nội dung có thể gây hại thực sự (black list ngắn, rõ ràng).
+  - Mọi thứ còn lại (off-topic, ngắn, mơ hồ) → để LLM Classifier xử lý với "unknown" intent.
 """
 
 # ============================================================
-# BLACKLIST DOMAINS - các chủ đề hoàn toàn cấm
+# BLACKLIST — nội dung nguy hiểm/vi phạm, luôn chặn
 # ============================================================
 _BLOCKED_TOPICS: list[str] = [
-    # An ninh mạng / hack
+    # An ninh mạng / tấn công
     "hack", "crack", "exploit", "sql injection", "xss", "ddos",
-    "brute force", "keylogger", "malware", "phần mềm độc hại", "phishing",
-    "bypass", "reverse engineer", "decompile",
+    "brute force", "keylogger", "malware", "phishing", "bypass",
 
-    # Chính trị / nhạy cảm
-    "chính trị", "đảng", "bầu cử", "biểu tình", "chiến tranh",
-    "vũ khí", "bom", "khủng bố", "ma túy",
+    # Vũ khí / tệ nạn
+    "vũ khí", "bom", "khủng bố", "ma túy", "chất nổ",
 
-    # Nội dung người lớn / không phù hợp
-    "sex", "khiêu dâm", "18+", "casino", "cờ bạc", "lừa đảo",
-    "scam", "gian lận",
-
-    # Câu hỏi cá nhân/không liên quan
-    "bạch tuộc", "thời tiết hôm nay", "tử vi", "xem bói",
-    "nấu ăn", "côn trùng",
+    # Nội dung người lớn / vi phạm
+    "khiêu dâm", "18+", "casino", "cờ bạc", "lừa đảo", "scam",
 ]
-
-# ============================================================
-# WHITELIST SIGNALS - đảm bảo câu có từ liên quan shop không bị block
-# ============================================================
-_DOMAIN_SIGNALS: list[str] = [
-    # Thiết bị điện tử
-    "iphone", "samsung", "laptop", "macbook", "điện thoại", "máy tính",
-    "tablet", "ipad", "android", "ios", "xiaomi", "oppo", "vivo",
-    # Hành động mua bán
-    "mua", "bán", "giá", "tồn kho", "hàng", "kho", "bảo hành", "đổi trả",
-    "sản phẩm", "thiết bị", "máy", "cấu hình", "specs",
-]
-
-# Nếu query quá ngắn và không có tín hiệu domain → coi là off-topic
-_MIN_QUERY_LENGTH = 2
 
 
 def is_safe_query(query: str) -> tuple[bool, str]:
     """
-    Kiểm tra query có an toàn và trong phạm vi hệ thống không.
+    Kiểm tra query có chứa nội dung bị cấm không.
 
     Returns:
-        (True, "") nếu an toàn
-        (False, reason) nếu bị chặn, kèm lý do
+        (True, "")            — an toàn, cho phép đi tiếp
+        (False, reason)       — bị chặn, kèm lý do
+
+    Lưu ý:
+        - Câu rỗng hoàn toàn bị chặn để tránh gọi LLM thừa.
+        - Mọi trường hợp còn lại (ngắn, lạ, off-topic) đều cho qua → LLM quyết định.
     """
-    q = query.lower().strip()
+    q = query.strip()
 
-    # 1. Quá ngắn → từ chối
-    if len(q.split()) < _MIN_QUERY_LENGTH:
-        return False, "Câu hỏi quá ngắn. Vui lòng cung cấp thêm thông tin."
+    # Chặn câu rỗng hoàn toàn (không tốn LLM call)
+    if not q:
+        return False, "Vui lòng nhập nội dung câu hỏi."
 
-    # 2. Kiểm tra blacklist - chặn nếu có từ khóa cấm
+    q_lower = q.lower()
+
+    # Kiểm tra blacklist
     for blocked in _BLOCKED_TOPICS:
-        if blocked in q:
+        if blocked in q_lower:
             return False, (
-                f"Câu hỏi của bạn không thuộc phạm vi hỗ trợ của hệ thống. "
-                f"Tôi chỉ có thể tư vấn về sản phẩm điện tử và dịch vụ mua sắm."
+                "Câu hỏi của bạn không thuộc phạm vi hỗ trợ của hệ thống. "
+                "Tôi chỉ tư vấn về sản phẩm điện tử và dịch vụ mua sắm."
             )
 
-    # 3. Câu hỏi không có tín hiệu domain nào → có thể off-topic
-    # Tuy nhiên không block cứng vì người dùng có thể hỏi bằng nhiều cách
-    # → Để Orchestrator xử lý qua "unknown" intent thay vì block ngay
+    # Mọi thứ còn lại → để AI phân tích
     return True, ""

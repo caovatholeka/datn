@@ -34,6 +34,7 @@ export default function ChatPage() {
   const fileRef = useRef<HTMLInputElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const abortRef = useRef<(() => void) | null>(null);
+  const autoLoaded = useRef(false); // tránh auto-select nhiều lần
 
   // ── Auth guard ─────────────────────────────────────────
   useEffect(() => {
@@ -41,7 +42,7 @@ export default function ChatPage() {
     if (!auth) { router.replace("/login"); return; }
     setUsername(auth.username);
     setAdmin(auth.role === "admin");
-    loadSessions();
+    loadSessions(true); // true = auto-select session gần nhất
   }, []);
 
   // ── Auto scroll ─────────────────────────────────────────
@@ -50,10 +51,15 @@ export default function ChatPage() {
   }, [messages]);
 
   // ── Load sessions ───────────────────────────────────────
-  const loadSessions = async () => {
+  const loadSessions = async (autoSelect = false) => {
     try {
       const data = await chat.getSessions();
       setSessions(data);
+      // Lần đầu vào trang: tự động mở session gần nhất
+      if (autoSelect && !autoLoaded.current && data.length > 0) {
+        autoLoaded.current = true;
+        await selectSession(data[0].id);
+      }
     } catch {
       router.replace("/login");
     }
@@ -196,8 +202,8 @@ export default function ChatPage() {
         prev.map((m) => (m.id === botId ? { ...m, streaming: false } : m))
       );
 
-      // Refresh session list
-      await loadSessions();
+      // Refresh session list (không auto-select lại)
+      await loadSessions(false);
       if (newSessionId && newSessionId !== activeSession) {
         setActiveSession(newSessionId);
       }

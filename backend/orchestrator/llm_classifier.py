@@ -53,10 +53,16 @@ NHÓM RAG (cần tra cứu tài liệu/kiến thức):
   - faq           : câu hỏi thường gặp khác liên quan đến mua sắm
 
 NHÓM ĐẶC BIỆT:
-  - greeting      : chào hỏi, cảm ơn, tạm biệt, mở đầu/kết thúc cuộc trò chuyện
-  - unknown       : hoàn toàn không liên quan đến cửa hàng điện tử (thời tiết, chính trị...)
+  - greeting      : chào hỏi, cảm ơn, tạm biệt, mở đầu/kết thúc cuộc trò chuyện,
+                    câu nói vui/casual như "thôi", "ngủ à", "ok", "được rồi", "vậy thôi",
+                    "ha ha", "ừ", "ừm", "à", "ờ", "hiểu rồi", "cảm ơn", "bye", "tạm biệt"
+  - unknown       : câu hoàn toàn ngoài phạm vi mua sắm điện tử (thời tiết, chính trị,
+                    toán học, lịch sử, lập trình...) VÀ không có tính chất hỏi han hay xã giao
 
-=== QUY TẮC PHÂN LOẠI ===
+=== QUY TẮC QUAN TRỌNG ===
+- "thôi", "thôi được", "vậy thôi", "ok thôi", "ngủ à", "ha ha", "ừ" → LUÔN là greeting
+- "ở đâu bán", "địa chỉ shop", "cửa hàng ở đâu" → faq (câu hỏi về cửa hàng)
+- "có gì rẻ hơn", "tìm máy rẻ hơn X", "ngân sách X triệu" → recommendation
 - intent = "tool"    nếu chỉ có check_price HOẶC check_stock
 - intent = "rag"     nếu chỉ có product_info, policy, recommendation, hoặc faq
 - intent = "hybrid"  nếu có cả TOOL intent lẫn RAG intent
@@ -102,9 +108,23 @@ Output: {"intent":"tool","sub_intents":["check_stock"],"product_hint":"Xiaomi 14
 Input follow-up: "thế còn iphone 16 thì sao?"
 Output: {"intent":"tool","sub_intents":["check_price"],"product_hint":"iPhone 16","confidence":"high"}
 
-[Lịch sử: đang so sánh 2 máy A và B]
-Input follow-up: "so sánh hai máy đó đi"
-Output: {"intent":"rag","sub_intents":["product_info"],"product_hint":"<tên 2 máy từ ngữ cảnh>","confidence":"medium"}
+Input: "thôi"
+Output: {"intent":"greeting","sub_intents":[],"product_hint":null,"confidence":"high"}
+
+Input: "ngủ à"
+Output: {"intent":"greeting","sub_intents":[],"product_hint":null,"confidence":"high"}
+
+Input: "ok cảm ơn shop"
+Output: {"intent":"greeting","sub_intents":[],"product_hint":null,"confidence":"high"}
+
+Input: "ở đâu bán iphone 15?"
+Output: {"intent":"rag","sub_intents":["faq"],"product_hint":"iPhone 15","confidence":"high"}
+
+Input: "có điện thoại nào rẻ hơn iPhone 15 128GB không?"
+Output: {"intent":"rag","sub_intents":["recommendation"],"product_hint":"iPhone 15 128GB","confidence":"high"}
+
+Input: "tư vấn giúp tôi điện thoại tầm 10 triệu"
+Output: {"intent":"rag","sub_intents":["recommendation"],"product_hint":null,"confidence":"high"}
 """
 
 

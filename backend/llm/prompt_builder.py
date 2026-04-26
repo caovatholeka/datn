@@ -107,6 +107,22 @@ def _serialize_data(data: dict, status: str) -> str:
     if data.get("tool_pending"):
         lines.append(f"\n[Cần bổ sung] Vui lòng cho biết rõ sản phẩm để tra cứu {data['tool_pending']}.")
 
+    # ── Recommendation result ────────────────────────────────
+    rec = data.get("recommendation", {})
+    if rec and rec.get("products"):
+        budget = rec.get("max_price")
+        products = rec["products"]
+        if budget:
+            lines.append(f"\nGợi ý sản phẩm trong tầm giá dưới {budget:,.0f} VND:")
+        else:
+            lines.append("\nGợi ý sản phẩm phù hợp:")
+        for i, p in enumerate(products, 1):
+            discount = p.get("discount", 0)
+            price_txt = f"{p['final_price']:,.0f} VND"
+            if discount > 0:
+                price_txt += f" (giảm {discount}%)"
+            lines.append(f"  {i}. {p['name']} — {price_txt}")
+
     return "\n".join(lines) if lines else "(Không có dữ liệu cụ thể)"
 
 

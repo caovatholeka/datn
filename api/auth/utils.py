@@ -1,10 +1,11 @@
 """
 auth/utils.py — JWT & bcrypt utilities
+Dùng bcrypt trực tiếp (bỏ passlib để tránh lỗi tương thích Python 3.11 + bcrypt 5.x)
 """
 import os
+import bcrypt
 from datetime import datetime, timedelta, timezone
 from jose import JWTError, jwt
-from passlib.context import CryptContext
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -13,15 +14,13 @@ SECRET_KEY  = os.getenv("JWT_SECRET_KEY", "change-me")
 ALGORITHM   = "HS256"
 EXPIRE_DAYS = int(os.getenv("JWT_EXPIRE_DAYS", "7"))
 
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-
 
 def hash_password(password: str) -> str:
-    return pwd_context.hash(password)
+    return bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt()).decode("utf-8")
 
 
 def verify_password(plain: str, hashed: str) -> bool:
-    return pwd_context.verify(plain, hashed)
+    return bcrypt.checkpw(plain.encode("utf-8"), hashed.encode("utf-8"))
 
 
 def create_access_token(data: dict) -> str:
