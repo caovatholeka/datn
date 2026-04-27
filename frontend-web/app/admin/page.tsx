@@ -17,6 +17,15 @@ export default function AdminPage() {
   const [loading, setLoading] = useState(false);
   const [selectedConv, setSelectedConv] = useState<string | null>(null);
   const [convMsgs, setConvMsgs] = useState<any[]>([]);
+  const [editingProduct, setEditingProduct] = useState<any | null>(null);
+  const [editForm, setEditForm] = useState({ name: "", brand: "", category: "", status: "", price: "", discount: "" });
+  const [saveMsg, setSaveMsg] = useState<{ type: "ok" | "err"; text: string } | null>(null);
+  const [saving, setSaving] = useState(false);
+  const [creating, setCreating] = useState(false);
+  const [createForm, setCreateForm] = useState({ name: "", brand: "", category: "", status: "active", price: "", discount: "0" });
+  const [createMsg, setCreateMsg] = useState<{ type: "ok" | "err"; text: string } | null>(null);
+  const [showCreate, setShowCreate] = useState(false);
+  const [deletingId, setDeletingId] = useState<string | null>(null);
 
   useEffect(() => {
     const auth = getAuth();
@@ -28,6 +37,64 @@ export default function AdminPage() {
   const loadUsers   = async () => { setLoading(true); const d = await admin.getUsers();        setUsers(d);   setLoading(false); };
   const loadConvs   = async () => { setLoading(true); const d = await admin.getConversations(); setConvs(d);  setLoading(false); };
   const loadProducts= async () => { setLoading(true); const d = await admin.getProducts();     setProducts(d);setLoading(false); };
+
+  const openEdit = (p: any) => {
+    setEditingProduct(p);
+    setEditForm({ name: p.name || "", brand: p.brand || "", category: p.category || "", status: p.status || "active", price: p.price?.toString() || "", discount: p.discount?.toString() || "0" });
+    setSaveMsg(null);
+  };
+
+  const saveProduct = async () => {
+    if (!editingProduct) return;
+    setSaving(true); setSaveMsg(null);
+    try {
+      const pd: Record<string, string> = {};
+      if (editForm.name.trim())     pd.name     = editForm.name.trim();
+      if (editForm.brand.trim())    pd.brand    = editForm.brand.trim();
+      if (editForm.category.trim()) pd.category = editForm.category.trim();
+      if (editForm.status.trim())   pd.status   = editForm.status.trim();
+      const pr: { price?: number; discount?: number } = {};
+      if (editForm.price !== "")    pr.price    = Number(editForm.price);
+      if (editForm.discount !== "") pr.discount = Number(editForm.discount);
+      if (Object.keys(pd).length > 0) await admin.updateProduct(editingProduct.id, pd);
+      if (Object.keys(pr).length > 0) await admin.updatePrice(editingProduct.id, pr);
+      setSaveMsg({ type: "ok", text: "Cập nhật thành công!" });
+      await loadProducts();
+      setTimeout(() => { setEditingProduct(null); setSaveMsg(null); }, 1200);
+    } catch (e: any) {
+      setSaveMsg({ type: "err", text: e.message || "Lỗi cập nhật" });
+    } finally { setSaving(false); }
+  };
+
+  const doCreate = async () => {
+    if (!createForm.name.trim() || !createForm.brand.trim() || !createForm.price) {
+      setCreateMsg({ type: "err", text: "Vui lòng nhập đủ Tên, Thương hiệu và Giá" }); return;
+    }
+    setCreating(true); setCreateMsg(null);
+    try {
+      await admin.createProduct({
+        name: createForm.name.trim(), brand: createForm.brand.trim(),
+        category: createForm.category.trim(), status: createForm.status || "active",
+        price: Number(createForm.price), discount: Number(createForm.discount || 0),
+      });
+      setCreateMsg({ type: "ok", text: "Tạo sản phẩm thành công!" });
+      await loadProducts();
+      setTimeout(() => { setShowCreate(false); setCreateForm({ name: "", brand: "", category: "", status: "active", price: "", discount: "0" }); setCreateMsg(null); }, 1200);
+    } catch (e: any) {
+      setCreateMsg({ type: "err", text: e.message || "Lỗi tạo sản phẩm" });
+    } finally { setCreating(false); }
+  };
+
+  const doDelete = async (id: string, name: string) => {
+    if (!confirm(`Xóa sản phẩm "${name}"?\nHành động này không thể hoàn tác.`)) return;
+    setDeletingId(id);
+    try {
+      await admin.deleteProduct(id);
+      await loadProducts();
+    } catch (e: any) {
+      alert("Lỗi xóa: " + (e.message || "Unknown error"));
+    } finally { setDeletingId(null); }
+  };
 
   const switchTab = (t: Tab) => {
     setTab(t); setSelectedConv(null);
@@ -193,13 +260,15 @@ export default function AdminPage() {
             <div style={s.tableHeader}>
               <h2 style={s.heading}>📦 Sản phẩm ({products.length})</h2>
               <button style={s.refreshBtn} onClick={loadProducts}><RefreshCw size={14} /></button>
+              <button style={{ ...s.saveBtn, marginLeft: "auto", display: "flex", alignItems: "center", gap: 6, padding: "7px 14px" }}
+                onClick={() => { setShowCreate(true); setCreateMsg(null); }}>➕ Thêm sản phẩm</button>
             </div>
             {loading ? <LoadingSpinner /> : (
               <table style={s.table}>
                 <thead>
                   <tr style={s.thead}>
                     <Th>ID</Th><Th>Tên sản phẩm</Th><Th>Thương hiệu</Th>
-                    <Th>Danh mục</Th><Th>Giá (VND)</Th><Th>Giảm giá</Th><Th>Tồn kho</Th>
+                    <Th>Danh mục</Th><Th>Giá (VND)</Th><Th>Giảm giá</Th><Th>Tồn kho</Th><Th></Th>
                   </tr>
                 </thead>
                 <tbody>
@@ -212,6 +281,14 @@ export default function AdminPage() {
                       <Td>{p.price?.toLocaleString("vi-VN")} ₫</Td>
                       <Td>{p.discount > 0 ? <span style={{ color: "#f59e0b" }}>-{p.discount}%</span> : "—"}</Td>
                       <Td>{p.total_stock}</Td>
+                      <Td>
+                        <button style={s.viewBtn} onClick={() => openEdit(p)}>✏️ Sửa</button>
+                        <button
+                          style={{ ...s.viewBtn, marginLeft: 6, color: "#ef4444", border: "1px solid rgba(239,68,68,0.3)", background: "rgba(239,68,68,0.1)" }}
+                          onClick={() => doDelete(p.id, p.name)}
+                          disabled={deletingId === p.id}
+                        >{deletingId === p.id ? "..." : "🗑️"}</button>
+                      </Td>
                     </tr>
                   ))}
                 </tbody>
@@ -220,6 +297,103 @@ export default function AdminPage() {
           </div>
         )}
       </div>
+
+      {/* ── Create Modal ── */}
+      {showCreate && (
+        <div style={s.overlay}>
+          <div style={s.modal}>
+            <h3 style={{ margin: "0 0 16px", fontSize: 16, fontWeight: 700, color: "var(--text-primary)" }}>➕ Thêm sản phẩm mới</h3>
+            <div style={s.formGrid}>
+              {([
+                { label: "Tên sản phẩm *", key: "name" },
+                { label: "Thương hiệu *",  key: "brand" },
+                { label: "Danh mục",      key: "category" },
+                { label: "Trạng thái",    key: "status" },
+              ] as { label: string; key: keyof typeof createForm }[]).map(({ label, key }) => (
+                <div key={key} style={s.formField}>
+                  <label style={s.formLabel}>{label}</label>
+                  <input style={s.formInput} value={createForm[key]}
+                    onChange={e => setCreateForm(f => ({ ...f, [key]: e.target.value }))} />
+                </div>
+              ))}
+              <div style={s.formField}>
+                <label style={s.formLabel}>Giá bán (VND) *</label>
+                <input style={s.formInput} type="number" value={createForm.price}
+                  onChange={e => setCreateForm(f => ({ ...f, price: e.target.value }))} />
+              </div>
+              <div style={s.formField}>
+                <label style={s.formLabel}>Giảm giá (%)</label>
+                <input style={s.formInput} type="number" min="0" max="100" value={createForm.discount}
+                  onChange={e => setCreateForm(f => ({ ...f, discount: e.target.value }))} />
+              </div>
+            </div>
+            {createMsg && (
+              <p style={{ margin: "12px 0 0", fontSize: 13, fontWeight: 600,
+                color: createMsg.type === "ok" ? "#22c55e" : "#ef4444" }}>
+                {createMsg.type === "ok" ? "✅" : "❌"} {createMsg.text}
+              </p>
+            )}
+            <div style={{ display: "flex", gap: 10, marginTop: 20, justifyContent: "flex-end" }}>
+              <button style={s.cancelBtn} onClick={() => setShowCreate(false)} disabled={creating}>Hủy</button>
+              <button style={s.saveBtn} onClick={doCreate} disabled={creating}>
+                {creating ? "Đang tạo..." : "✅ Tạo sản phẩm"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ── Edit Modal ── */}
+      {editingProduct && (
+        <div style={s.overlay}>
+          <div style={s.modal}>
+            <h3 style={{ margin: "0 0 16px", fontSize: 16, fontWeight: 700, color: "var(--text-primary)" }}>✏️ Chỉnh sửa sản phẩm</h3>
+            <p style={{ margin: "0 0 16px", fontSize: 12, color: "var(--text-secondary)" }}>ID: {editingProduct.id}</p>
+
+            <div style={s.formGrid}>
+              {([
+                { label: "Tên sản phẩm", key: "name" },
+                { label: "Thương hiệu",  key: "brand" },
+                { label: "Danh mục",     key: "category" },
+                { label: "Trạng thái",   key: "status" },
+              ] as { label: string; key: keyof typeof editForm }[]).map(({ label, key }) => (
+                <div key={key} style={s.formField}>
+                  <label style={s.formLabel}>{label}</label>
+                  <input
+                    style={s.formInput}
+                    value={editForm[key]}
+                    onChange={e => setEditForm(f => ({ ...f, [key]: e.target.value }))}
+                  />
+                </div>
+              ))}
+              <div style={s.formField}>
+                <label style={s.formLabel}>Giá bán (VND)</label>
+                <input style={s.formInput} type="number" value={editForm.price}
+                  onChange={e => setEditForm(f => ({ ...f, price: e.target.value }))} />
+              </div>
+              <div style={s.formField}>
+                <label style={s.formLabel}>Giảm giá (%)</label>
+                <input style={s.formInput} type="number" min="0" max="100" value={editForm.discount}
+                  onChange={e => setEditForm(f => ({ ...f, discount: e.target.value }))} />
+              </div>
+            </div>
+
+            {saveMsg && (
+              <p style={{ margin: "12px 0 0", fontSize: 13, fontWeight: 600,
+                color: saveMsg.type === "ok" ? "#22c55e" : "#ef4444" }}>
+                {saveMsg.type === "ok" ? "✅" : "❌"} {saveMsg.text}
+              </p>
+            )}
+
+            <div style={{ display: "flex", gap: 10, marginTop: 20, justifyContent: "flex-end" }}>
+              <button style={s.cancelBtn} onClick={() => setEditingProduct(null)} disabled={saving}>Hủy</button>
+              <button style={s.saveBtn} onClick={saveProduct} disabled={saving}>
+                {saving ? "Đang lưu..." : "💾 Lưu thay đổi"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -282,6 +456,14 @@ const s: Record<string, React.CSSProperties> = {
     padding: "4px 12px", background: "rgba(108,99,255,0.15)", border: "1px solid rgba(108,99,255,0.3)",
     borderRadius: 6, color: "var(--accent)", fontSize: 12, cursor: "pointer",
   },
+  overlay: { position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1000 },
+  modal: { background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 16, padding: "28px 32px", width: 560, maxHeight: "85vh", overflowY: "auto", boxShadow: "0 24px 80px rgba(0,0,0,0.5)" },
+  formGrid: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px 20px" },
+  formField: { display: "flex", flexDirection: "column" as const, gap: 6 },
+  formLabel: { fontSize: 11, fontWeight: 600, color: "var(--text-secondary)", letterSpacing: "0.05em", textTransform: "uppercase" as const },
+  formInput: { padding: "8px 12px", borderRadius: 8, border: "1px solid var(--border)", background: "var(--bg-secondary)", color: "var(--text-primary)", fontSize: 13, outline: "none" },
+  saveBtn: { padding: "9px 20px", background: "#6c63ff", border: "none", borderRadius: 8, color: "#fff", fontSize: 13, fontWeight: 600, cursor: "pointer" },
+  cancelBtn: { padding: "9px 20px", background: "var(--bg-secondary)", border: "1px solid var(--border)", borderRadius: 8, color: "var(--text-secondary)", fontSize: 13, cursor: "pointer" },
   statsGrid: { display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: 16 },
   statCard: {
     background: "var(--bg-card)", border: "1px solid var(--border)", borderTop: "3px solid",

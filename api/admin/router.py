@@ -7,7 +7,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspa
 from fastapi import APIRouter, HTTPException, Depends
 from backend.db.connection import get_cursor
 from api.deps import require_admin
-from api.admin.schemas import ProductUpdate, PriceUpdate
+from api.admin.schemas import ProductUpdate, PriceUpdate, ProductCreate
 
 router = APIRouter(prefix="/admin", tags=["Admin"])
 
@@ -124,6 +124,37 @@ def list_products(admin: dict = Depends(require_admin)):
         )
         rows = cur.fetchall()
     return [dict(r) for r in rows]
+
+
+@router.post("/products", summary="Thêm sản phẩm mới")
+def create_product(body: ProductCreate, admin: dict = Depends(require_admin)):
+    import time
+    product_id = f"PROD-{int(time.time() * 1000) % 100000:05d}"
+    with get_cursor() as cur:
+        cur.execute(
+            """
+            INSERT INTO products (id, name, brand, category, status)
+            VALUES (%s, %s, %s, %s, %s)
+            """,
+            (product_id, body.name, body.brand, body.category, body.status),
+        )
+        cur.execute(
+            "INSERT INTO prices (product_id, price, discount) VALUES (%s, %s, %s)",
+            (product_id, body.price, body.discount or 0),
+        )
+    return {"created": True, "product_id": product_id}
+
+
+@router.delete("/products/{product_id}", summary="Xóa sản phẩm")
+def delete_product(product_id: str, admin: dict = Depends(require_admin)):
+    with get_cursor() as cur:
+        # Xóa theo thứ tự: inventory → prices → products
+        cur.execute("DELETE FROM inventory WHERE product_id = %s", (product_id,))
+        cur.execute("DELETE FROM prices WHERE product_id = %s", (product_id,))
+        cur.execute("DELETE FROM products WHERE id = %s RETURNING id", (product_id,))
+        if not cur.fetchone():
+            raise HTTPException(404, "Sản phẩm không tồn tại")
+    return {"deleted": True, "product_id": product_id}
 
 
 @router.put("/products/{product_id}", summary="Cập nhật thông tin sản phẩm")

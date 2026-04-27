@@ -131,9 +131,10 @@ export default function ChatPage() {
 
     // Prepare image base64
     let imageB64: string | undefined;
-    if (imageFile) {
-      const bytes = await imageFile.arrayBuffer();
-      imageB64 = btoa(String.fromCharCode(...new Uint8Array(bytes)));
+    if (imageFile && imagePreview) {
+      // imagePreview là data URL đã có sẵn (vd: "data:image/jpeg;base64,/9j/...")
+      // Chỉ cần bỏ phần prefix → lấy base64 thuần
+      imageB64 = imagePreview.split(",")[1];
     }
 
     // Add streaming placeholder
@@ -289,6 +290,15 @@ export default function ChatPage() {
               <div style={s.userRow}>
                 <div style={s.avatar}>{username[0]?.toUpperCase()}</div>
                 <span style={s.usernameTxt}>{username}</span>
+                {admin && (
+                  <button
+                    style={{ ...s.logoutBtn, color: "#6c63ff" }}
+                    onClick={() => router.push("/admin")}
+                    title="Admin Panel"
+                  >
+                    <ShieldCheck size={15} />
+                  </button>
+                )}
                 <button style={s.logoutBtn} onClick={logout} title="Đăng xuất">
                   <LogOut size={15} />
                 </button>
@@ -559,7 +569,7 @@ const s: Record<string, React.CSSProperties> = {
     display: "flex", alignItems: "center", justifyContent: "center",
     transition: "all 0.2s",
   },
-  iconBtnActive: { color: "var(--accent)", borderColor: "var(--accent)", background: "rgba(108,99,255,0.1)" },
+  iconBtnActive: { color: "var(--accent)", border: "1px solid var(--accent)", background: "rgba(108,99,255,0.1)" },
   textarea: {
     flex: 1, padding: "10px 14px",
     background: "var(--bg-card)", border: "1px solid var(--border)",

@@ -175,17 +175,38 @@ def send_message(req: ChatRequest, user: dict = Depends(get_current_user)):
             # ── 4. Build context ────────────────────────────
             context = _memory.build_context(history, summary)
 
-            # ── 5. Xử lý ảnh đính kèm (OCR) ────────────────
+            # ── 5. Xử lý ảnh đính kèm (GPT-4o Vision) ──────
             pipeline_query = req.message
             if req.image_b64:
                 try:
-                    from frontend.ocr_helper import analyze_product_image
-                    image_bytes = base64.b64decode(req.image_b64)
-                    ocr = analyze_product_image(image_bytes, "image/jpeg")
-                    if ocr.get("success"):
-                        pipeline_query = f"[Ảnh sản phẩm: {ocr['full_name']}] {req.message}"
-                except Exception:
-                    pass  # OCR thất bại → dùng text gốc
+                    from openai import OpenAI
+                    import os
+                    _vision = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+                    vision_resp = _vision.chat.completions.create(
+                        model="gpt-4o-mini",
+                        messages=[{
+                            "role": "user",
+                            "content": [
+                                {
+                                    "type": "image_url",
+                                    "image_url": {
+                                        "url": f"data:image/jpeg;base64,{req.image_b64}",
+                                        "detail": "low"
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "Đây là ảnh sản phẩm điện tử. Hãy nhận dạng tên sản phẩm (thương hiệu, model nếu có). Chỉ trả lời tên sản phẩm, không giải thích thêm."
+                                }
+                            ]
+                        }],
+                        max_tokens=60,
+                    )
+                    product_name = vision_resp.choices[0].message.content.strip()
+                    if product_name:
+                        pipeline_query = f"[Ảnh sản phẩm: {product_name}] {req.message}"
+                except Exception as e:
+                    pass  # Vision thất bại → dùng text gốc
 
             # ── 6. Orchestrator ─────────────────────────────
             orch_result = _orch.handle_query(
