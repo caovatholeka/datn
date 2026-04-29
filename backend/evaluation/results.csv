@@ -1,28 +1,63 @@
 ﻿id,query,expected_intent,got_intent,intent_correct,confidence,got_hint,latency_ms,note
-1,xin chào shop ạ,greeting,greeting,ĐÚNG,high,,1686,Chào hỏi cơ bản
-2,shop ơi cho mình hỏi tý nhé,greeting,greeting,ĐÚNG,high,,1134,"Mở đầu cuộc trò chuyện, chưa hỏi gì cụ thể"
-3,iphone 16 giá bao nhiêu tiền vậy?,tool,tool,ĐÚNG,high,iPhone 16,1658,Hỏi giá thẳng — phổ biến nhất
-4,samsung galaxy s25 ultra bán bao nhiêu?,tool,tool,ĐÚNG,high,Samsung Galaxy S25 Ultra,1642,Dùng 'bán' thay vì 'giá'
-5,macbook air m3 mấy tiền vậy bạn,tool,tool,ĐÚNG,high,MacBook Air M3,2457,"Từ thân mật 'bạn', viết tắt 'mấy tiền'"
-6,oppo reno 12 pro có đang sale không?,tool,tool,ĐÚNG,high,Oppo Reno 12 Pro,1840,Hỏi giảm giá/sale — dạng gián tiếp của check_price
-7,samsung s24 fe giá thế nào shop ơi,tool,tool,ĐÚNG,high,Samsung S24 FE,1786,Kêu 'shop ơi' — cách nói dân dã
-8,shop còn iphone 15 pro max không?,tool,tool,ĐÚNG,high,iPhone 15 Pro Max,1348,Hỏi tồn kho thẳng
-9,xiaomi 14t pro còn hàng không bạn?,tool,tool,ĐÚNG,high,Xiaomi 14T Pro,1496,Phổ biến — 'còn hàng không?'
-10,cửa hàng có bán điện thoại samsung không?,tool,tool,ĐÚNG,high,Samsung,2773,Hỏi brand chứ không hỏi model cụ thể
-11,airpods pro gen 2 hiện còn bán không?,tool,tool,ĐÚNG,high,AirPods Pro Gen 2,1455,"Phụ kiện, hỏi 'hiện còn bán không'"
-12,iphone 16 pro còn hàng không và giá bao nhiêu?,hybrid,hybrid,ĐÚNG,high,iPhone 16 Pro,1383,Hỏi cả 2 trong 1 câu — rõ ràng
-13,samsung galaxy s25 giá và tồn kho thế nào?,hybrid,hybrid,ĐÚNG,high,Samsung Galaxy S25,1327,"Đảo thứ tự: giá trước, tồn kho sau"
-14,"xiaomi 14 ultra còn không, mà giá ra sao?",hybrid,hybrid,ĐÚNG,high,Xiaomi 14 Ultra,1408,"Ngôn ngữ rất tự nhiên, có dấu phẩy ngắt"
-15,"sony wh-1000xm5 giá bao nhiêu, có sẵn hàng không?",hybrid,hybrid,ĐÚNG,high,Sony WH-1000XM5,1574,"Tai nghe, dùng 'có sẵn hàng' thay vì 'còn hàng'"
-16,so sánh iphone 16 và samsung s25 đi,rag,rag,ĐÚNG,medium,"iPhone 16, Samsung S25",1500,So sánh 2 flagship — cần RAG
-17,xiaomi 14t pro có mấy camera?,rag,rag,ĐÚNG,medium,Xiaomi 14T Pro,1548,Hỏi thông số kỹ thuật cụ thể
-18,pin iphone 16 pro max xài được bao lâu?,rag,rag,ĐÚNG,medium,iPhone 16 Pro Max,1378,Hỏi tuổi thọ pin — thông số kỹ thuật
-19,airpods pro 2 có chống ồn tốt không?,rag,rag,ĐÚNG,high,AirPods Pro 2,1462,Review/đánh giá tính năng
-20,vivo v40 màn hình bao nhiêu inch?,rag,rag,ĐÚNG,medium,Vivo V40,1846,"Thông số cụ thể, ngắn gọn"
-21,điện thoại chụp ảnh đẹp tầm 15 triệu nên mua gì?,rag,rag,ĐÚNG,high,,1744,Tư vấn theo nhu cầu + ngân sách
-22,laptop gaming pin trâu dưới 25 triệu thì mua cái nào?,rag,rag,ĐÚNG,high,laptop gaming dưới 25 triệu,1961,Điều kiện cụ thể: gaming + pin + giá
-23,tai nghe chống ồn tốt tầm 2 triệu có gì không shop?,rag,rag,ĐÚNG,high,tai nghe chống ồn,1472,Tư vấn phụ kiện theo ngân sách
-24,bảo hành máy bao lâu và làm sao đổi trả?,rag,rag,ĐÚNG,high,,1374,Hỏi chính sách bảo hành + đổi trả
-25,mua online về bị lỗi có được đổi không?,rag,rag,ĐÚNG,high,,1458,Tình huống thực tế: hàng lỗi sau khi mua online
+1,xin chào shop ạ,greeting,greeting,ĐÚNG,high,,2896,Chào cơ bản
+2,shop ơi cho mình hỏi tý nhé,greeting,greeting,ĐÚNG,high,,1428,Mở đầu chưa hỏi gì
+3,"hi shop, bạn có thể tư vấn giúp mình không?",greeting,greeting,ĐÚNG,high,,1685,English 'hi' + xin tư vấn chưa rõ sản phẩm
+4,alo shop,greeting,greeting,ĐÚNG,high,,1511,Câu siêu ngắn — dùng 'alo' như gọi điện
+5,iphone 16 giá bao nhiêu tiền vậy?,tool,tool,ĐÚNG,high,iPhone 16,1761,Hỏi giá thẳng — baseline
+6,samsung galaxy s25 ultra bán bao nhiêu?,tool,tool,ĐÚNG,high,Samsung Galaxy S25 Ultra,1958,Dùng 'bán' thay vì 'giá'
+7,ip 16 pro max bao nhiêu,tool,rag,SAI,medium,iPhone 16 Pro Max,2134,Viết tắt 'ip' thay vì iPhone — rất phổ biến
+8,s25 ultra phé không shop?,tool,tool,ĐÚNG,high,Samsung Galaxy S25 Ultra,2703,Tiếng lóng 'phé' = đắt không
+9,macbook air m3 mấy đồng vậy bạn,tool,tool,ĐÚNG,high,MacBook Air M3,1779,Lóng 'mấy đồng' — Nam Bộ
+10,oppo reno 12 pro có đang sale không?,tool,tool,ĐÚNG,high,Oppo Reno 12 Pro,1762,'sale' = giảm giá — gián tiếp
+11,giá galaxy tab s9 ultra 512gb màu đen bao nhiêu?,tool,tool,ĐÚNG,high,Galaxy Tab S9 Ultra 512GB màu đen,1941,Máy tính bảng + dung lượng + màu sắc
+12,rog phone 8 pro giá có cạnh tranh không?,tool,rag,SAI,medium,ROG Phone 8 Pro,1749,Hỏi giá + so sánh mơ hồ — gaming phone
+13,iphone 15 128gb còn bảo hành giá bao nhiêu?,tool,hybrid,SAI,high,iPhone 15 128GB,1753,Từ 'bảo hành' xuất hiện nhưng intent vẫn là giá
+14,"airpods pro 2 giảm rồi à, còn bao nhiêu?",tool,hybrid,SAI,high,AirPods Pro 2,1854,"Giả định đã giảm, hỏi giá hiện tại"
+15,giá iphone 16 pro màu titan tự nhiên,tool,tool,ĐÚNG,high,iPhone 16 Pro màu titan tự nhiên,1779,Bao gồm màu sắc trong câu hỏi giá
+16,"mình muốn mua samsung s24 fe, giá thế nào?",tool,tool,ĐÚNG,high,Samsung S24 FE,1932,Purchase intent + price — câu dài tự nhiên
+17,shop còn iphone 15 pro max không?,tool,tool,ĐÚNG,high,iPhone 15 Pro Max,1909,Hỏi tồn kho thẳng
+18,xiaomi 14t pro còn hàng không bạn?,tool,tool,ĐÚNG,high,Xiaomi 14T Pro,3321,'còn hàng' — phổ biến
+19,"samsung a55 có không shop, cần mua gấp",tool,tool,ĐÚNG,high,Samsung A55,1661,Câu ngắn + urgency 'cần gấp'
+20,vẫn còn hàng iphone 16 không ạ?,tool,tool,ĐÚNG,high,iPhone 16,1706,Đảo 'vẫn còn hàng' lên đầu câu
+21,macbook pro m4 ship được luôn không hay hết hàng rồi?,tool,hybrid,SAI,high,MacBook Pro M4,2071,Ship ngay = có sẵn hàng — hỏi gián tiếp
+22,"mình cần mua 2 cái iphone 16 plus, còn không?",tool,tool,ĐÚNG,high,iPhone 16 Plus,2177,Số lượng 2 cái — mua sỉ nhỏ
+23,pixel 9 pro fold shop có nhập không?,tool,tool,ĐÚNG,high,Pixel 9 Pro Fold,2110,'có nhập không' = check_stock gián tiếp
+24,iphone 16 pro còn hàng không và giá bao nhiêu?,hybrid,hybrid,ĐÚNG,high,iPhone 16 Pro,1608,Hybrid rõ ràng
+25,samsung galaxy s25 giá và tồn kho thế nào?,hybrid,hybrid,ĐÚNG,high,Samsung Galaxy S25,1892,Đảo thứ tự giá trước
+26,"xiaomi 14 ultra còn không, mà giá ra sao?",hybrid,hybrid,ĐÚNG,high,Xiaomi 14 Ultra,1872,Ngôn ngữ tự nhiên có dấu phẩy
+27,"sony wh-1000xm5 giá bao nhiêu, có sẵn hàng không?",hybrid,hybrid,ĐÚNG,high,Sony WH-1000XM5,2112,Tai nghe cao cấp
+28,"mình muốn mua iphone 15, còn không và giá là bao?",hybrid,hybrid,ĐÚNG,high,iPhone 15,1794,Purchase intent ẩn + hybrid
+29,"tab s9 ultra 512gb hàng còn nhiều không, giá có tốt không?",hybrid,hybrid,ĐÚNG,high,Tab S9 Ultra 512GB,1698,'giá có tốt không' = hỏi giá gián tiếp
+30,asus zenbook 14 oled còn hàng không giá bao nhiêu ship hà nội,hybrid,hybrid,ĐÚNG,high,Asus Zenbook 14 OLED,1639,Không dấu câu — câu liên tục tự nhiên + địa điểm
+31,airpods max còn không và đang giảm giá bao nhiêu phần trăm?,hybrid,hybrid,ĐÚNG,high,AirPods Max,2533,Hỏi % giảm cụ thể — phức tạp hơn
+32,so sánh iphone 16 và samsung s25 đi,rag,rag,ĐÚNG,medium,"iPhone 16, Samsung S25",1581,So sánh 2 flagship
+33,xiaomi 14t pro có mấy camera và zoom được bao nhiêu lần?,rag,rag,ĐÚNG,medium,Xiaomi 14T Pro,2282,Thông số camera cụ thể
+34,"pin iphone 16 pro max xài được bao lâu, sạc nhanh mấy watt?",rag,rag,ĐÚNG,high,iPhone 16 Pro Max,1655,2 thông số kỹ thuật trong 1 câu
+35,samsung s25 ultra có bút s-pen không và viết có mượt không?,rag,rag,ĐÚNG,high,Samsung S25 Ultra,1700,Feature + trải nghiệm chủ quan
+36,"macbook pro m4 ram bao nhiêu, có hỗ trợ 2 màn hình ngoài không?",rag,rag,ĐÚNG,high,MacBook Pro M4,1652,Thông số RAM + tính năng display
+37,pixel 9 pro camera có tốt hơn iphone 16 không?,rag,rag,ĐÚNG,medium,"Pixel 9 Pro, iPhone 16",1672,So sánh camera trực tiếp 2 sản phẩm
+38,iphone 16 có cổng usb-c không hay vẫn lightning?,rag,rag,ĐÚNG,high,iPhone 16,1544,Hỏi về cổng kết nối — thông tin kỹ thuật quan trọng
+39,gaming laptop asus rog strix g16 màn hình refresh rate bao nhiêu?,rag,rag,ĐÚNG,high,Asus ROG Strix G16,1505,Thông số màn hình gaming — khách chuyên nghiệp
+40,điện thoại chụp ảnh đẹp tầm 15 triệu nên mua gì?,rag,rag,ĐÚNG,high,,1437,Budget + use case
+41,laptop gaming pin trâu dưới 25 triệu thì mua cái nào?,rag,rag,ĐÚNG,high,laptop gaming dưới 25 triệu,1863,Gaming + pin + budget
+42,tai nghe chống ồn tốt tầm 2 triệu có gì không shop?,rag,rag,ĐÚNG,high,tai nghe chống ồn,3537,Phụ kiện + budget
+43,điện thoại nào dưới 10 triệu pin 5000mah trở lên?,rag,rag,ĐÚNG,high,,1474,Budget chặt + thông số kỹ thuật cụ thể
+44,mình là sinh viên muốn mua laptop tầm 18-20 triệu dùng đồ họa nhẹ,rag,rag,ĐÚNG,high,,1453,User persona + budget range + use case
+45,có gì rẻ hơn iphone 15 mà chụp ảnh cũng ổn không?,rag,rag,ĐÚNG,high,iPhone 15,1507,So sánh giá tham chiếu + feature ảnh
+46,mua tặng ba điện thoại tầm 12 triệu dùng dễ chụp ảnh đẹp,rag,rag,ĐÚNG,high,,1655,Mua tặng = không phải dùng cho mình — context khác
+47,"nên mua iphone 16 hay samsung s25, dùng chụp ảnh và quay video",rag,rag,ĐÚNG,high,,1377,So sánh để chọn — recommendation dạng so sánh 2 SP
+48,bảo hành máy bao lâu và làm sao đổi trả?,rag,rag,ĐÚNG,high,,1471,Chính sách bảo hành + đổi trả
+49,mua online về bị lỗi có được đổi không?,rag,rag,ĐÚNG,high,,1750,Hàng lỗi — tình huống thực tế
+50,"shop có ship toàn quốc không, mất mấy ngày và phí ship bao nhiêu?",rag,rag,ĐÚNG,high,,1593,Chính sách vận chuyển — 3 câu hỏi con
+51,thanh toán trả góp lãi suất 0% có không?,rag,rag,ĐÚNG,high,,1579,Chính sách thanh toán — trả góp
+52,mình mua iphone rồi nhưng muốn đổi sang màu khác được không?,rag,rag,ĐÚNG,high,iPhone,1766,KHÓ: có tên SP nhưng intent là policy/đổi trả
+53,khi mua iphone 16 ở đây thì bảo hành mấy năm?,rag,rag,ĐÚNG,high,iPhone 16,1568,KHÓ: có tên SP + hỏi bảo hành — dễ nhầm tool
+54,thời tiết hà nội hôm nay thế nào?,unknown,unknown,ĐÚNG,high,,1609,Hoàn toàn ngoài scope
+55,kết quả bóng đá tối qua như nào vậy?,unknown,unknown,ĐÚNG,high,,1550,Thể thao — ngoài scope
+56,giá bitcoin hôm nay bao nhiêu đô?,unknown,unknown,ĐÚNG,high,,2702,KHÓ: có từ 'giá' nhưng bitcoin ≠ sản phẩm điện tử
+57,giá xăng hôm nay tăng không?,unknown,unknown,ĐÚNG,high,,1479,KHÓ: có từ 'giá' nhưng xăng ≠ sản phẩm
+58,bạn có thể viết bài luận về biến đổi khí hậu giúp tôi không?,unknown,unknown,ĐÚNG,high,,1655,Yêu cầu tạo nội dung — ngoài scope
+59,nhà hàng nào ở quận 1 ngon và rẻ vậy?,unknown,unknown,ĐÚNG,high,,1353,Nhà hàng — ngoài scope
+60,giá cổ phiếu apple hôm nay là bao nhiêu?,unknown,unknown,ĐÚNG,high,,1538,"KHÓ NHẤT: Apple + giá nhưng là cổ phiếu, không phải sản phẩm"
 
-Tổng,,,,,,,100.0%,,
+Tổng,,,,,,,91.7%,,

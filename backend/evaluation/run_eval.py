@@ -1,7 +1,7 @@
 """
 run_eval.py
 Script đánh giá độ chính xác của LLM Intent Classifier
-trên bộ 25 câu kiểm thử thực tế.
+trên bộ 60 câu kiểm thử thực tế (nâng cao).
 
 Chạy:
     python -m backend.evaluation.run_eval
